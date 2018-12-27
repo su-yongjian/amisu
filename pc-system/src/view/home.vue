@@ -1,0 +1,41 @@
+<template>
+    <div class="mainBox">
+        home
+    </div>
+</template>
+<style rel="stylesheet/scss" lang="scss" scoped>
+    
+</style>
+<script>
+import {tableList}  from "../axios/api.js" ;
+
+export default {
+    data() {
+       return {
+            
+        }
+    },
+//	创建实例时就会触发
+    created() {
+        
+    },
+    mounted() {
+        // this.getData()
+    },
+//	检测视图值变化触发，有改变就会触发
+    computed:{
+        
+    },
+    methods:{
+        getData(){
+            tableList().then(res=>{
+                console.log(res);
+                
+            })
+        }
+    },
+    components: {
+        
+    },
+}
+</script>
