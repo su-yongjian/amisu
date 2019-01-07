@@ -1,6 +1,6 @@
 <template>
     <div class="mainBox">
-        home
+        <table-lists></table-lists>
     </div>
 </template>
 <style rel="stylesheet/scss" lang="scss" scoped>
@@ -8,8 +8,11 @@
 </style>
 <script>
 import {tableList}  from "../axios/api.js" ;
-
+import tableLists  from "@/view/table/table"
 export default {
+    components: {
+        tableLists
+    },
     data() {
        return {
             
@@ -33,9 +36,6 @@ export default {
                 
             })
         }
-    },
-    components: {
-        
-    },
+    }
 }
 </script>
