@@ -107,7 +107,7 @@ export default {
           date: "2016-10-04",
           updateTime:"2019-01-07"
         },
-        
+
       ]
     };
   },
@@ -130,6 +130,9 @@ export default {
     },
     add(){
         console.log('新增');
+        this.$router.push({
+          name: 'AddGood', params: { is_edit: true }
+        })
     }
   },
   components: {}

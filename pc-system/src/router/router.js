@@ -7,6 +7,7 @@ import error from '@/view/error'
 import p404 from '@/view/404'
 import p505 from '@/view/505'
 import Login from '@/login'
+import AddGood from '@/view/table/addGoods'
 
 Vue.use(Router)
 
@@ -22,6 +23,14 @@ const router = new Router({
           path: 'home',
           name: 'Home',
           component: Home,
+          meta:{
+            requireLogin:true
+          },
+        },
+        {
+          path: 'add',
+          name: 'AddGood',
+          component: AddGood,
           meta:{
             requireLogin:true
           },
@@ -48,7 +57,7 @@ const router = new Router({
           name: '505',
           component: p505,
         }
-        
+
       ]
     }
   ]
@@ -62,7 +71,7 @@ router.beforeEach((to, from, next) => {
     } else {
       // 没登录则跳转到登录界面
       console.log("to login");
-      
+
       next({
         path: "/login"
       });
