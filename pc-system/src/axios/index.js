@@ -11,12 +11,13 @@ const Service = Axios.create({
   withCredentials: true, // 是否允许带cookie这些
   headers: {
     //   "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
-    "Content-Type": "application/json;charset=utf-8"
+    // "Content-Type": "application/json;charset=utf-8"
   }
 });
 
 // 设置请求拦截器
 Service.interceptors.request.use((config) => {
+  console.log(config);
 
   config => {
       // 在发送请求之前做某件事
@@ -89,6 +90,7 @@ Service.interceptors.response.use(res => {
       path: "/login"
     });
   } else {
+
       // 下面是接口回调的satus ,因为我做了一些错误页面,所以都会指向对应的报错页面
       if (error.response.status === 403) {
         router.push({
@@ -110,7 +112,7 @@ Service.interceptors.response.use(res => {
           path: "/error/404"
         });
       }
-    
+
   }
   // 返回 response 里的错误信息
   let errorInfo = error.data.error ? error.data.error.message : error.data;

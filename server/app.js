@@ -21,9 +21,14 @@ const config = require('./config')
 // 后台渲染路由配置
 const routes = require('./routes')
 
-// 前台渲染调用API
 
-const common = require('./libs/common')
+
+// 前台渲染调用API
+const common = require('./libs/common')  //uuid公共函数，md5函数
+// 管理系统接口导入
+const admin_router = require('./controller/admin/index')
+
+
 
 const port = process.env.PORT || config.port
 
@@ -47,6 +52,8 @@ app.use(bodyparser())
   // }))
   .use(router.routes())
   .use(router.allowedMethods())
+  .use(admin_router.routes())
+  .use(admin_router.allowedMethods())
 
 // logger
 app.use(async (ctx, next) => {
@@ -64,7 +71,10 @@ router.get('/', async (ctx, next) => {
   await ctx.render('index', ctx.state)
 })
 
+
 routes(router)
+
+
 app.on('error', function(err, ctx) {
   console.log(err)
   logger.error('server error', err, ctx)

@@ -7,3 +7,13 @@ export function tableList(query){
         params: query
     })
 }
+
+export function addGood(query){
+  console.log(query);
+
+  return request({
+      url: 'http://localhost:3000/admin/addGood',
+      method: 'post',
+      params: query
+  })
+}
