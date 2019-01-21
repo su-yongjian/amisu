@@ -9,9 +9,15 @@
  *
  * QUERY_TABLE(tb_user)
 */
-const QUERY_TABLE = (table_name,{key,val}) => `SELECT * FROM ${table_name} WHERE '${key}'?'${key}=${val}':'1=1'`
-
-
+const QUERY_TABLE = (table_name,{key,val}) =>{
+  let sql = '';
+  if(key){
+    sql = `SELECT * FROM ${table_name} WHERE '${key}'='${val}'`
+  }else{
+    sql = `SELECT * FROM ${table_name}`
+  }
+  return  sql
+}
 
 // 插入数据
 /**
@@ -21,7 +27,9 @@ const QUERY_TABLE = (table_name,{key,val}) => `SELECT * FROM ${table_name} WHERE
 
  * INSERT_TABLE(tb_user,'username,password','lisi,123456')
 */
-const INSERT_TABLE = (table_name,{key,val}) => `INSERT INTO ${table_name} (${key}) VALUES(${val})`
+const INSERT_TABLE = (table_name,{key,val}) =>{
+  return `INSERT INTO ${table_name} (${key}) VALUES(${val})`
+}
 
 
 
@@ -33,11 +41,11 @@ const INSERT_TABLE = (table_name,{key,val}) => `INSERT INTO ${table_name} (${key
  * 如  ID = 1
  * UPDATE_TABLE(tb_user,{ID,1},{username,zhansan})
 */
-const UPDATE_TABLE = (table_name,{primaryKey,primaryVal},{key,val}) => `UPDATE ${table_name} SET ${key}=${val} WHERE(${primaryKey}=${primaryVal});`
+const UPDATE_TABLE = (table_name,{primaryKey,primaryVal},{key,val}) =>{ return  `UPDATE ${table_name} SET ${key}=${val} WHERE(${primaryKey}=${primaryVal});`}
 
 // 删除数据
 
-const DELETE_TABLE = (table_name,{primaryKey,primaryVal},{key,val}) => `DELETE FROM ${table_name} WHERE(${primaryKey}=${primaryVal});`
+const DELETE_TABLE = (table_name,{primaryKey,primaryVal},{key,val}) =>{ return `DELETE FROM ${table_name} WHERE(${primaryKey}=${primaryVal});`}
 
 module.exports = {
     QUERY_TABLE,

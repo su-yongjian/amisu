@@ -1,43 +1,106 @@
-const Router = require('koa-router')
-const {query} = require('../../libs/koa-better-mysql.js')
-const common = require('../../libs/common')
+const Router = require("koa-router");
+const { query } = require("../../libs/koa-better-mysql.js");
+const common = require("../../libs/common");
+
 const {
   QUERY_TABLE,
   INSERT_TABLE,
   UPDATE_TABLE,
   DELETE_TABLE
-} = require('../../utils/sql.js')
-const user_router = require('./user')
+} = require("../../utils/sql.js");
+const user_router = require("./user");
 
-let router = new Router({prefix:'/admin'})
+let router = new Router({ prefix: "/admin" });
 
-router.get('/',async (ctx,next)=>{
+router.get("/", async (ctx, next) => {
   ctx.body = {
-    code:0,
-    msg:'succ',
-    method:'get'
+    code: 0,
+    msg: "succ",
+    method: "get"
+  };
+});
+
+// let password = '123456';
+// let username = 'amysu_'+ Math.floor(Math.random()*100);
+// let id = common.uuid()
+// password = common.md5(password)
+// let sql =  `insert into tb_user (ID,username,password) values('${id}','${username}','${password}')`;
+
+router.post("/addGood", async (ctx, next) => {
+  let goods_name = ctx.request.body.goods_name;
+  let goods_desc = ctx.request.body.goods_desc;
+  let shop_price = ctx.request.body.shop_price;
+  let goods_stock = ctx.request.body.goods_stock
+    ? ctx.request.body.goods_stock
+    : 0;
+  let update_time = Number(new Date());
+  // let searchSpl = QUERY_TABLE('tb_goodslist',{key:'goods_name',val:goods_name})
+  let searchSpl = `select * from tb_goodslist where goods_name='${goods_name}'`;
+  let re = await query(searchSpl);
+  console.log(re);
+
+  if (re.length > 0) {
+    ctx.body = {
+      code: -1,
+      msg: "该商品已经存在",
+      results: []
+    };
+  } else {
+    let searchLength = `select COUNT(*) from tb_goodslist`;
+    let len = await query(searchLength);
+    let totle = len[0]["COUNT(*)"];
+    if (totle >= 20) {
+      let sear_id = `select goods_id from tb_goodslist order by update_time desc`;
+      let sear_data = await query(sear_id);
+      let del_id = sear_data[0].goods_id;
+      let delSql = `delete from tb_goodslist where goods_id=${del_id}`;
+      let delbdata = await query(delSql);
+      let key = "goods_name,goods_desc,shop_price,goods_stock,update_time";
+      let val = `'${goods_name}','${goods_desc}','${shop_price}','${goods_stock}','${update_time}'`;
+      let insertSql = INSERT_TABLE("tb_goodslist", { key, val });
+
+      let dbdata = await query(insertSql);
+      ctx.body = {
+        code: 0,
+        msg: "succ",
+        results: dbdata
+      };
+    } else {
+      let key = "goods_name,goods_desc,shop_price,goods_stock,update_time";
+      let val = `'${goods_name}','${goods_desc}','${shop_price}','${goods_stock}','${update_time}'`;
+      let insertSql = INSERT_TABLE("tb_goodslist", { key, val });
+
+      let dbdata = await query(insertSql);
+      ctx.body = {
+        code: 0,
+        msg: "succ",
+        results: dbdata
+      };
+    }
   }
-})
+});
+router.get("/goodsList", async (ctx, next) => {
+  let key = "";
+  let val = "";
+  let sql = QUERY_TABLE("tb_goodslist", { key, val });
+  console.log(sql);
+  let dbdata = await query(sql);
 
-router.post('/addGood',async(ctx,next)=>{
+  dbdata.map((v, idx) => {
+    let ndate = new Date(parseInt(v.update_time));
+    v.update_time =
+      ndate.toLocaleDateString().replace(/\//g, "-") +
+      " " +
+      ndate.toTimeString().substr(0, 8);
+    return v;
+  });
 
-  console.log(ctx);
-
-  let password = '123456';
-  let username = 'amysu_'+ Math.floor(Math.random()*100);
-  let id = common.uuid()
-  password = common.md5(password)
-  let sql =  `insert into tb_user (ID,username,password) values('${id}','${username}','${password}')`;
-  let dbdata = await query(sql)
-
-  console.log(dbdata);
-  ctx.body={
-    code:0,
-    msg:"succ",
-    results:dbdata
-  }
-
-})
+  ctx.body = {
+    code: 0,
+    msg: "succ",
+    results: dbdata
+  };
+});
 // 二级路由
 // router.use(user_router.routes()).use(user_router.allowedMethods())
-module.exports = router
+module.exports = router;

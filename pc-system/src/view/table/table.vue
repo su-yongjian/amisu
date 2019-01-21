@@ -1,12 +1,13 @@
 <template>
   <div class="tabBox">
     <Button type="primary" @click="add">新增</Button>
-    <Table :loading="loading" ref="selection" :columns="columns1" :data="data1"></Table>
+    <Table :loading="loading" ref="selection" :columns="columns1" :data="list"></Table>
   </div>
 </template>
 <style rel="stylesheet/scss" lang="scss" scoped>
 </style>
 <script>
+import {tableList}  from "@/axios/api.js" ;
 export default {
   name: "tableList",
   data() {
@@ -20,19 +21,19 @@ export default {
         },
         {
           title: "商品名称",
-          key: "name"
+          key: "goods_name"
         },
         {
           title: "商品价格",
-          key: "age"
+          key: "shop_price"
         },
         {
-          title: "总库存",
-          key: "address"
+          title: "商品库存",
+          key: "goods_stock"
         },
         {
           title: "最后更新",
-          key: "updateTime"
+          key: "update_time"
         },
         {
           title: "操作",
@@ -78,48 +79,35 @@ export default {
           }
         }
       ],
-      data1: [
-        {
-          name: "John Brown",
-          age: 18,
-          address: "New York No. 1 Lake Park",
-          date: "2016-10-03",
-          updateTime:"2019-01-07"
-        },
-        {
-          name: "Jim Green",
-          age: 24,
-          address: "London No. 1 Lake Park",
-          date: "2016-10-01",
-          updateTime:"2019-01-07"
-        },
-        {
-          name: "Joe Black",
-          age: 30,
-          address: "Sydney No. 1 Lake Park",
-          date: "2016-10-02",
-          updateTime:"2019-01-07"
-        },
-        {
-          name: "Jon Snow",
-          age: 26,
-          address: "Ottawa No. 2 Lake Park",
-          date: "2016-10-04",
-          updateTime:"2019-01-07"
-        },
-
-      ]
+      list: []
     };
   },
   //	创建实例时就会触发
-  created() {},
+  created() {
+    this.getList();
+    let da = new Date(1548063383140);
+    console.log(da.toLocaleDateString().replace(/\//g, "-") + " " + da.toTimeString().substr(0, 8));
+
+  },
   mounted() {},
   //	检测视图值变化触发，有改变就会触发
   computed: {},
   methods: {
-    handleSelectAll(status) {
-      console.log(status);
+    getList(){
+        // this.$axios.get('http://localhost:3000/admin/goodsList').then(res=>{
+        //   console.log(res);
 
+        // })
+      tableList().then(res=>{
+
+        if(res.status==200&&res.data.code==0){
+          this.list = res.data.results;
+          console.log(this.list);
+
+        }
+      })
+    },
+    handleSelectAll(status) {
       this.$refs.selection.selectAll(status);
     },
     remove(index) {

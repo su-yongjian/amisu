@@ -10,7 +10,7 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 
 const bodyparser = require('koa-bodyparser')
-const bodyParsers = require('koa-better-body')
+// const bodyParsers = require('koa-better-body')
 
 // 跨域处理
 const cors = require('koa2-cors');
