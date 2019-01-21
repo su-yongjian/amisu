@@ -56,6 +56,10 @@ export default {
                 }
                 let data = this.formValidate
                 console.log(data);
+                // this.$axios.post('http://localhost:3000/admin/addGood',{data:data}).then(res=>{
+                //   console.log(res);
+
+                // })
 
                 addGood(data).then(res=>{
                   console.log(res);

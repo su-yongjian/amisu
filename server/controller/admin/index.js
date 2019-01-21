@@ -19,7 +19,7 @@ router.get('/',async (ctx,next)=>{
   }
 })
 
-router.get('/addGood',async(ctx,next)=>{
+router.post('/addGood',async(ctx,next)=>{
 
   console.log(ctx);
 
@@ -31,6 +31,11 @@ router.get('/addGood',async(ctx,next)=>{
   let dbdata = await query(sql)
 
   console.log(dbdata);
+  ctx.body={
+    code:0,
+    msg:"succ",
+    results:dbdata
+  }
 
 })
 // 二级路由

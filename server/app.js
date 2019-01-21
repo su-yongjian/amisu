@@ -12,6 +12,9 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const bodyParsers = require('koa-better-body')
 
+// 跨域处理
+const cors = require('koa2-cors');
+
 const logger = require('koa-logger')
 const debug = require('debug')('koa2:server')
 const path = require('path')
@@ -20,6 +23,21 @@ const config = require('./config')
 
 // 后台渲染路由配置
 const routes = require('./routes')
+
+// 具体参数我们在后面进行解释
+app.use(cors({
+  origin: function (ctx) {
+      if (ctx.url === '/test') {
+          return "*"; // 允许来自所有域名请求
+      }
+      return 'http://localhost:8080'; // 这样就能只允许 http://localhost:8080 这个域名的请求了
+  },
+  exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+  maxAge: 5,
+  credentials: true,
+  allowMethods: ['GET', 'POST', 'DELETE'],
+  allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+}))
 
 
 

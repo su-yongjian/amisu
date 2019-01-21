@@ -10,16 +10,16 @@ const Service = Axios.create({
   responseType: "json",
   withCredentials: true, // 是否允许带cookie这些
   headers: {
-    //   "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
-    // "Content-Type": "application/json;charset=utf-8"
+      // "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+    "Content-Type": "application/json;charset=utf-8"
   }
 });
 
 // 设置请求拦截器
-Service.interceptors.request.use((config) => {
-  console.log(config);
+Service.interceptors.request.use(
 
-  config => {
+    config=> {
+      console.log(config);
       // 在发送请求之前做某件事
       if (config.method === "post") {
         // 序列化
@@ -44,7 +44,7 @@ Service.interceptors.request.use((config) => {
       });
       return Promise.reject(error);
     }
-})
+)
 
 // 响应拦截  http 请求回来的一些状态码，包括我们自己的服务器返回的错误码进行一个逻辑处理。
 Service.interceptors.response.use(res => {
@@ -62,6 +62,7 @@ Service.interceptors.response.use(res => {
   // }
   return res;
 }, (error) => {
+  console.log(error);
 
   // 错误处理方式1：
 //   if (error.data) {
