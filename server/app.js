@@ -46,7 +46,8 @@ const common = require('./libs/common')  //uuid公共函数，md5函数
 // 管理系统接口导入
 const admin_router = require('./controller/admin/index')
 
-
+// 用户管理入口
+const user_router = require('./controller/users/index')
 
 const port = process.env.PORT || config.port
 
@@ -72,6 +73,8 @@ app.use(bodyparser())
   .use(router.allowedMethods())
   .use(admin_router.routes())
   .use(admin_router.allowedMethods())
+  .use(user_router.routes())
+  .use(user_router.allowedMethods())
 
 // logger
 app.use(async (ctx, next) => {
