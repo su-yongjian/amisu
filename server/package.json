@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node app.js"
+    "dev": "node app.js",
+    "start":"./node_modules/.bin/nodemon app.js"
   },
   "dependencies": {
     "art-template": "^4.13.2",
@@ -35,7 +36,7 @@
     "koa-art-template": "^1.1.1",
     "koa-better-body": "^3.0.4",
     "koa-convert": "^1.2.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.18.9",
     "uuid": "^3.3.2"
   }
 }

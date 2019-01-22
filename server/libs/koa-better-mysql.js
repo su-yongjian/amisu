@@ -26,5 +26,20 @@ let query = ( sql, values ) => {
         })
     })
 }
+let createTable = ( sql ) => {
+  return query( sql ,[])
+}
+let tb_users =
+  `create table if not exists tb_users(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL COMMENT '用户名',
+    password VARCHAR(100) NOT NULL COMMENT '密码',
+    avator VARCHAR(100) NOT NULL COMMENT '头像',
+    moment VARCHAR(100) NOT NULL COMMENT '注册时间',
+    PRIMARY KEY ( id )
+  );`
+
+// 建用户表
+createTable(tb_users)
 
 module.exports = {query}
