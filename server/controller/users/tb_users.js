@@ -1,7 +1,7 @@
 const {query} = require('../../libs/koa-better-mysql');
 // 注册用户
 exports.insertUser = ( value ) => {
-  let _sql = "insert into tb_users set user_id=?, username=?,password=?,avator=?,create_time=?;"
+  let _sql = "insert into tb_users set user_id=?, username=?,password=?,avator=?,create_time=?,login_status=?,user_rule=?;"
 
   return query( _sql, value)
 }

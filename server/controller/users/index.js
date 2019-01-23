@@ -11,8 +11,8 @@ router.get('/',async (ctx)=>{
   ctx.response.redirect('/home');
 })
 // 注册
-router.post('/registor',async (ctx)=>{
-  let username = "amisu7";
+router.get('/registor',async (ctx)=>{
+  let username = "amisu10";
   let password = '1'
   password = common.md5(password);
 
@@ -23,6 +23,8 @@ router.post('/registor',async (ctx)=>{
   let user_rule = "1";
   let flag = true ;
   await userModel.findByName(username).then(res=>{
+    console.log(res);
+    
     if(res[0].count>0){
       flag = false
       ctx.body = {
@@ -40,7 +42,7 @@ router.post('/registor',async (ctx)=>{
     let _del_id = 0 ;
     if(count>50) {
       await userModel.findUsers('tb_users').then(res=>{
-        // console.log(res);
+        console.log(res);
         let _res = [] ;
         res.map(v=>{
           if(v.user_id!=1){
@@ -58,7 +60,7 @@ router.post('/registor',async (ctx)=>{
 
 
     await userModel.insertUser([user_id,username,password,avator,create_time,login_status,user_rule]).then(res => {
-      // console.log('注册成功',res);
+      console.log('注册成功',res);
       ctx.body = {
         code:0,
         count:count,
