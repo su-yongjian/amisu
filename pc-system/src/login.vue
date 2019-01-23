@@ -4,8 +4,8 @@
         <canvas id="canvas"></canvas>
         <div class="loginContent">
             <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
-                <FormItem prop="user">
-                    <Input type="text" v-model="formInline.user" placeholder="用户名">
+                <FormItem prop="username">
+                    <Input type="text" v-model="formInline.username" placeholder="用户名">
                         <Icon type="ios-person-outline" slot="prepend"></Icon>
                     </Input>
                 </FormItem>
@@ -40,16 +40,17 @@
 </style>
 <script>
 // import {cavasfn} from "@/cavas.js"
+import {login} from '@/axios/user'
 export default {
     data() {
        return {
             is_draw:true,
             formInline: {
-                user: '',
+                username: '',
                 password: ''
             },
             ruleInline: {
-                user: [
+                username: [
                     { required: true, message: '请输入用户名', trigger: 'blur' }
                 ],
                 password: [
@@ -74,15 +75,27 @@ export default {
         
     },
     methods:{
+        
         handleSubmit(name) {
-            this.$refs[name].validate((valid) => {
+            let _this = this ;
+            _this.$refs[name].validate((valid) => {
                 if (valid) {
-                    localStorage.setItem("username",this.formInline.user);
-                    this.$Message.success('登录成功');
-                    this.$router.push("/");
+
+                    login(_this.formInline).then(res=>{
+                        console.log(res);
+                        if(res.status==200&&res.data.code==0){
+                            localStorage.setItem("username",this.formInline.user);
+                            this.$Message.success('登录成功');
+                            this.$router.push("/");
+                        }else{
+                            _this.$Message.error(res.data.msg);
+                        }
+                    })
+
+
                 } else {
                     localStorage.removeItem("username");
-                    this.$Message.error('登录失败');
+                    _this.$Message.error('登录失败');
                 }
             })
         },
@@ -309,7 +322,7 @@ export default {
 
             vars.frameNo++;
             requestAnimationFrame(function () {
-                console.log(_this.is_draw);
+                // console.log(_this.is_draw);
                 if(_this.is_draw){                    
                     _this.frame(vars);
                 }

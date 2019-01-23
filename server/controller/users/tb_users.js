@@ -12,10 +12,22 @@ exports.deleteUser = (user_id ) => {
   return query( _sql )
 }
 
+// 查询所有用户
+exports.findUsers = ( tb_users) => {
+  let _sql = `select * from ${tb_users};`
+  return query( _sql )
+}
+
 // 查询用户
 exports.findOneUser = ( name ) => {
   let _sql = `select * from tb_users where username="${name}";`
-  return query( sql )
+  return query( _sql )
+}
+
+// 根据用户名查找用户id
+exports.findOneUser = ( name ) => {
+  let _sql = `select * from tb_users where username="${name}";`
+  return query( _sql )
 }
 
 // 通过名称查找某条记录是否已存在

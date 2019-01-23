@@ -37,6 +37,8 @@ let tb_users =
     password VARCHAR(100) NOT NULL COMMENT '密码',
     avator VARCHAR(100) NOT NULL COMMENT '头像',
     create_time VARCHAR(100) NOT NULL COMMENT '注册时间',
+    login_status VARCHAR(100) NOT NULL COMMENT '登录状态',
+    user_rule VARCHAR(100) NOT NULL COMMENT '用户角色',
     PRIMARY KEY ( user_id )
   );`
 
