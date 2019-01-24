@@ -1,8 +1,8 @@
 const Router = require("koa-router");
-const { query } = require("../../libs/koa-better-mysql.js");
+// const { query } = require("../../libs/koa-better-mysql.js");
 const common = require("../../libs/common");
 const userModel = require('./tb_users')
-const user_router = require("./user");
+// const user_router = require("./user");
 const moment = require('moment');
 
 let router = new Router({ prefix:"/user"})
@@ -80,7 +80,12 @@ router.post('/login',async (ctx)=>{
         result:[]
       }
     }else if(res.length && username === res[0].username && common.md5(password)===res[0].password){
-        ctx.body = {
+      // ctx.session['username'] = username ;
+      
+      // console.log("session");
+      // console.log(ctx.session);
+      
+      ctx.body = {
           code:0,
           msg:'succ',
           result:[]

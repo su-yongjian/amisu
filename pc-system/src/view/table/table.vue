@@ -7,7 +7,7 @@
 <style rel="stylesheet/scss" lang="scss" scoped>
 </style>
 <script>
-import {tableList}  from "@/axios/api.js" ;
+import {tableList,deleteGoods}  from "@/axios/goodsAPI.js" ;
 export default {
   name: "tableList",
   data() {
@@ -69,7 +69,7 @@ export default {
                   },
                   on: {
                     click: () => {
-                      this.remove(params.index);
+                      this.remove(params.index,params.row.goods_id);
                     }
                   }
                 },
@@ -94,10 +94,6 @@ export default {
   computed: {},
   methods: {
     getList(){
-        // this.$axios.get('http://localhost:3000/admin/goodsList').then(res=>{
-        //   console.log(res);
-
-        // })
       tableList().then(res=>{
 
         if(res.status==200&&res.data.code==0){
@@ -110,8 +106,15 @@ export default {
     handleSelectAll(status) {
       this.$refs.selection.selectAll(status);
     },
-    remove(index) {
-      console.log(index);
+    remove(index,id) {
+      console.log(index,id);
+      deleteGoods({goods_id:id}).then(res=>{
+        if(res.status==200&&res.data.code==0){
+          this.$Message.success('删除成功!');
+        }else{
+          this.$Message.error(res.data.msg);
+        }
+      })
     },
     edit(index) {
       console.log(index);

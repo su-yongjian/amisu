@@ -11,6 +11,9 @@ const onerror = require('koa-onerror')
 
 const bodyparser = require('koa-bodyparser')
 // const bodyParsers = require('koa-better-body')
+const session = require('koa-session')
+// session_key
+const session_key = require('./secret/session_key.js')
 
 // 跨域处理
 const cors = require('koa2-cors');
@@ -23,6 +26,7 @@ const config = require('./config')
 
 // 后台渲染路由配置
 const routes = require('./routes')
+
 
 // 具体参数我们在后面进行解释
 app.use(cors({
@@ -40,6 +44,45 @@ app.use(cors({
 }))
 
 
+// cookie
+// app.use(async ctx=>{
+//   ctx.cookies.set('user','zhansan',{maxAge:24*3600*1000})//过期时间一天
+//   ctx.cookies.set('user','lisi',{maxAge:24*3600*1000,path:'/aaa'})//只有访问aaa的路径或者子路径可以看到
+//   ctx.cookies.set('user','wuwu',{maxAge:24*3600*1000,path:'/aaa',domain:'baidu.com'})//只有访问aaa的路径,且域名是baidu.com可以看到
+
+//   console.log(ctx.cookies.get('user'));
+  
+// })
+
+// session
+app.keys = session_key;
+const CONFIG = {
+  key: 'koa:sess',   //cookie key (default is koa:sess)
+  maxAge: 20*60*1000,  // cookie的过期时间 maxAge in ms (default is 1 days：86400000毫秒)
+  overwrite: true,  //是否可以overwrite    (默认default true)
+  httpOnly: true, //cookie是否只有服务器端可以访问 httpOnly or not (default true)
+  signed: true,   //签名默认true
+  rolling: false,  //在每次请求时强行设置cookie，这将重置cookie过期时间（默认：false）
+  renew: false,  //(boolean) renew session when session is nearly expired,
+};
+app.use(session(CONFIG,app))
+
+// app.use(async (ctx,next)=>{
+//   ctx.session['username'] = 'admin';
+  
+//   if(!ctx.session['username'] && (ctx.request.url!='/user/login')){
+//     console.log('url');
+//     // console.log(ctx.request.url);
+//       ctx.body={
+//         code:4004,
+//         msg:'没有登录',
+//         result:[]
+//       }
+//   }else{
+//       console.log('你是'+ctx.session['username']+'访问');
+//       next()
+//   }
+// })
 
 // 前台渲染调用API
 const common = require('./libs/common')  //uuid公共函数，md5函数

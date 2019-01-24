@@ -1,14 +1,14 @@
 const Router = require("koa-router");
 const { query } = require("../../libs/koa-better-mysql.js");
 const common = require("../../libs/common");
-
+const goodsModel = require('./sql')
 const {
   QUERY_TABLE,
   INSERT_TABLE,
   UPDATE_TABLE,
   DELETE_TABLE
 } = require("../../utils/sql.js");
-const user_router = require("./user");
+const user_router = require("./sql");
 
 let router = new Router({ prefix: "/admin" });
 
@@ -25,8 +25,29 @@ router.get("/", async (ctx, next) => {
 // let id = common.uuid()
 // password = common.md5(password)
 // let sql =  `insert into tb_user (ID,username,password) values('${id}','${username}','${password}')`;
+router.get("/goodsList", async (ctx, next) => {
+  let key = "";
+  let val = "";
+  let sql = QUERY_TABLE("tb_goodslist", { key, val });
+  console.log(sql);
+  let dbdata = await query(sql);
 
-router.post("/addGood", async (ctx, next) => {
+  dbdata.map((v, idx) => {
+    let ndate = new Date(parseInt(v.update_time));
+    v.update_time =
+      ndate.toLocaleDateString().replace(/\//g, "-") +
+      " " +
+      ndate.toTimeString().substr(0, 8);
+    return v;
+  });
+
+  ctx.body = {
+    code: 0,
+    msg: "succ",
+    results: dbdata
+  };
+});
+router.post("/addGoods", async (ctx, next) => {
   let goods_name = ctx.request.body.goods_name;
   let goods_desc = ctx.request.body.goods_desc;
   let shop_price = ctx.request.body.shop_price;
@@ -79,28 +100,30 @@ router.post("/addGood", async (ctx, next) => {
     }
   }
 });
-router.get("/goodsList", async (ctx, next) => {
-  let key = "";
-  let val = "";
-  let sql = QUERY_TABLE("tb_goodslist", { key, val });
-  console.log(sql);
-  let dbdata = await query(sql);
+router.post('/deleteGoods',async (ctx,next)=>{
 
-  dbdata.map((v, idx) => {
-    let ndate = new Date(parseInt(v.update_time));
-    v.update_time =
-      ndate.toLocaleDateString().replace(/\//g, "-") +
-      " " +
-      ndate.toTimeString().substr(0, 8);
-    return v;
-  });
+  console.log(ctx.request.body);
+  
+  let goods_id = ctx.request.body.goods_id ;
+  await goodsModel.deleteGoods(goods_id).then(res=>{
 
-  ctx.body = {
-    code: 0,
-    msg: "succ",
-    results: dbdata
-  };
-});
+    if(res.affectedRows==1){
+      ctx.body = {
+        code:0,
+        msg:'succ',
+        result:[]
+      }
+    }else{
+      ctx.body = {
+        code:1,
+        msg:'商品不存在',
+        result:[]
+      }
+    }
+  }).catch(() => {
+      ctx.body = 'error'
+  })
+})
 // 二级路由
 // router.use(user_router.routes()).use(user_router.allowedMethods())
 module.exports = router;

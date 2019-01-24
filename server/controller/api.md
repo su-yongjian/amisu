@@ -1,3 +1,4 @@
 该文件夹下放置的是api接口路由配置
 
 获取koa2下post传过来的数据
+ctx.request.body.xxxx

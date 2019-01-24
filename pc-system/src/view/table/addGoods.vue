@@ -20,7 +20,7 @@
     </Form>
 </template>
 <script>
-import {addGood}  from "@/axios/api.js" ;
+import {addGood}  from "@/axios/goodsAPI.js" ;
 export default {
     data () {
         return {

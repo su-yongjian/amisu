@@ -7,7 +7,7 @@
     
 </style>
 <script>
-import {tableList}  from "../axios/api.js" ;
+import {tableList}  from "../axios/goodsAPI.js" ;
 import tableLists  from "@/view/table/table"
 export default {
     components: {
