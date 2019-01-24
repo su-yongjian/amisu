@@ -60,6 +60,10 @@ Service.interceptors.response.use(res => {
   //     });
   //     return Promise.reject(res.data.error.message);
   // }
+  if(res.data.code==4004){
+    router.push({path: "/login"});
+    return
+  }
   return res;
 }, (error) => {
   console.log(error);

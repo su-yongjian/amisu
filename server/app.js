@@ -67,22 +67,21 @@ const CONFIG = {
 };
 app.use(session(CONFIG,app))
 
-// app.use(async (ctx,next)=>{
-//   ctx.session['username'] = 'admin';
+app.use(async (ctx,next)=>{
+  // ctx.session['username'] = 'admin';
+
+  console.log(ctx.cookies.get('username'));
   
-//   if(!ctx.session['username'] && (ctx.request.url!='/user/login')){
-//     console.log('url');
-//     // console.log(ctx.request.url);
-//       ctx.body={
-//         code:4004,
-//         msg:'没有登录',
-//         result:[]
-//       }
-//   }else{
-//       console.log('你是'+ctx.session['username']+'访问');
-//       next()
-//   }
-// })
+  if(!ctx.session && ctx.path !== '/user/login'){
+    ctx.body={
+      code:4004,
+      msg:'没有登录',
+      result:[]
+    }
+    return;
+  }
+  await next()
+})
 
 // 前台渲染调用API
 const common = require('./libs/common')  //uuid公共函数，md5函数

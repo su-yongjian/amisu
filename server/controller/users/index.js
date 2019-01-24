@@ -70,9 +70,10 @@ router.get('/registor',async (ctx)=>{
   }
 })
 // 登录
-router.post('/login',async (ctx)=>{
+router.post('/login',async (ctx,next)=>{
   let {username,password} = ctx.request.body ;
   await userModel.findOneUser(username).then(res=>{
+    
     if(res.length==0){
       ctx.body = {
         code:1,
@@ -80,16 +81,12 @@ router.post('/login',async (ctx)=>{
         result:[]
       }
     }else if(res.length && username === res[0].username && common.md5(password)===res[0].password){
-      // ctx.session['username'] = username ;
-      
-      // console.log("session");
-      // console.log(ctx.session);
-      
+      ctx.session['username'] = username;      
       ctx.body = {
           code:0,
           msg:'succ',
           result:[]
-        }
+      }
     }else{
       ctx.body = {
         code:1,
