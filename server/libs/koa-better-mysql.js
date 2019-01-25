@@ -41,7 +41,6 @@ let tb_users =
     user_rule VARCHAR(100) NOT NULL COMMENT '用户角色',
     PRIMARY KEY ( user_id )
   );`
-
 // 建用户表
 createTable(tb_users)
 

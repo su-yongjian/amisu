@@ -72,8 +72,9 @@ router.get('/registor',async (ctx)=>{
 // 登录
 router.post('/login',async (ctx,next)=>{
   let {username,password} = ctx.request.body ;
+
   await userModel.findOneUser(username).then(res=>{
-    
+
     if(res.length==0){
       ctx.body = {
         code:1,
