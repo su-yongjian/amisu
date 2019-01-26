@@ -1,8 +1,8 @@
 import request from "@/axios/index.js"
-
+import {config} from "@/config"
 export function tableList(query){
     return request({
-        url: 'http://localhost:3000/admin/goodsList',
+        url: config.baseUrl + '/admin/goodsList',
         method: 'get',
         params: query
     })
@@ -10,7 +10,7 @@ export function tableList(query){
 
 export function addGood(query){
   return request({
-      url: 'http://localhost:3000/admin/addGoods',
+      url: config.baseUrl + '/admin/addGoods',
       method: 'post',
       data: query
   })
@@ -18,7 +18,7 @@ export function addGood(query){
 
 export function deleteGoods(query){
     return request({
-        url: 'http://localhost:3000/admin/deleteGoods',
+        url: config.baseUrl + '/admin/deleteGoods',
         method: 'post',
         data: query
     })

@@ -11,7 +11,7 @@ router.get('/',async (ctx)=>{
   ctx.response.redirect('/home');
 })
 // 注册
-router.get('/registor',async (ctx)=>{
+router.post('/registor',async (ctx)=>{
   let username = "amisu10";
   let password = '1'
   password = common.md5(password);

@@ -92,8 +92,7 @@
                             <span style="font-size:18px;font-weight:bold">后台管理系统</span>
                         </div>
                         <div style="margin-right:20px">
-                            <!-- <Button type="text" icon="person" size="large">个人中心</Button>
-                            <Button type="text" icon="android-notifications" size="large" @click="clickNotice">消息通知</Button> -->
+                            <Button type="text" icon="person" size="large" @click="personal">个人中心</Button>
                             <Button type="text" icon="android-exit" size="large" @click="quit">退出系统</Button>
                         </div>
                     </div>     
@@ -117,7 +116,8 @@
                             </Tag>
                         </template>
                     </div>                  
-                </Header>                
+                </Header>
+               
                 <Content :style="{
                     height: 'calc(100% - 100px)',
                     position: 'absolute',
@@ -127,14 +127,55 @@
                     width:isCollapsed?'calc(100% - 78px)':'calc(100% - 200px)'
                     }">
                     <!--保存组件状态到内存，避免重新渲染-->
-                    <keep-alive>
+                    <!-- <keep-alive> -->
                         <router-view/>    
-                    </keep-alive>               
+                    <!-- </keep-alive>                -->
                 </Content>
             </Layout>
         </Layout>
+
+        <Modal v-model="modal" title="用户信息" 
+        @on-ok="ok"
+        @on-cancel="cancel">
+            <Form ref="userInfo" :model="userInfo" :rules="ruleValidate" :label-width="80">
+                <FormItem label="登录账户" prop="username">
+                    <Input v-model="userInfo.username" placeholder="输入登录账户"></Input>
+                </FormItem>
+                <FormItem label="登录密码" prop="password">
+                    <Input type="password" v-model="userInfo.password" placeholder="输入登录密码"></Input>
+                </FormItem>
+                <FormItem label="用户角色" prop="user_rule">
+                    <Select v-model="userInfo.user_rule" placeholder="选择用户角色">
+                        <Option value="2">管理员</Option>
+                        <Option value="3">会员</Option>
+                    </Select>
+                </FormItem>
+                <FormItem label="性别" prop="gender">
+                    <RadioGroup v-model="userInfo.gender">
+                        <Radio label="male">男</Radio>
+                        <Radio label="female">女</Radio>
+                    </RadioGroup>
+                </FormItem>
+                <FormItem label="用户头像" prop="avator">
+                    <Input v-model="userInfo.avator" placeholder="上传用户头像"></Input>
+                </FormItem>
+            </Form>
+        </Modal>
+        <Form ref="userInfo" :model="userInfo" :rules="ruleValidate" :label-width="80">
+
+                <FormItem label="用户角色" prop="user_rule">
+                    <Select v-model="userInfo.user_rule" placeholder="选择用户角色">
+                        <Option value="2">管理员</Option>
+                        <Option value="3">会员</Option>
+                    </Select>
+                </FormItem>
+
+            </Form>
     </div>
   </section>
+
+    
+
 </template>
 <style>
     .tagStyle .ivu-tag-dot-inner{
@@ -250,8 +291,31 @@ export default {
             title:'首页',
             activeMenuName:'home',
             openMenuName:[],
-            menus:Menus
+            menus:Menus,
             // ------------------------------  菜单操作结束  --------------------------------   
+            // 新增用户
+            modal:false,
+            userInfo:{
+                username:'',
+                password:'',
+                user_rule:'',
+                gender:'',
+                avator:''
+            },
+
+
+            ruleValidate: {
+                    username: [
+                        { required: true, message: '用户密码不能为空', trigger: 'blur' }
+                    ],
+                    password: [
+                        { required: true, message: '密码不能为空', trigger: 'blur' },
+                        { type: 'string', min: 6, message: '输入6位以上密码', trigger: 'blur' }
+                    ],
+                    user_rule: [
+                        { required: true, message: '请选择用户角色', trigger: 'change' }
+                    ]
+                }
         }
     },
     computed: {
@@ -300,6 +364,16 @@ export default {
         // ...mapActions([
         //     'logout'
         // ]),
+        personal(){
+            this.modal = !this.modal
+        },
+        ok(){
+            console.log(this.userInfo);
+            
+        },
+        cancel(){
+
+        },
         quit(){
             localStorage.removeItem('token');
             localStorage.removeItem('username');

@@ -14,6 +14,8 @@ import {
    Form ,
    FormItem,
    Input, 
+   Radio, 
+   RadioGroup, 
    Message ,
    Alert,
    Notice,
@@ -40,7 +42,10 @@ Vue.component('Table', Table);
 Vue.component('Form', Form);
 Vue.component('FormItem', FormItem);
 Vue.component('Input', Input);
+Vue.component('Radio', Radio);
+Vue.component('RadioGroup', RadioGroup);
 Vue.component('Table', Table);
+Vue.component('Modal', Modal);
 Vue.component('Layout', Layout);
 Vue.component('Header', Header);
 Vue.component('Menu', Menu);
