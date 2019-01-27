@@ -144,12 +144,15 @@
                 <FormItem label="登录密码" prop="password">
                     <Input type="password" v-model="userInfo.password" placeholder="输入登录密码"></Input>
                 </FormItem>
+
                 <FormItem label="用户角色" prop="user_rule">
-                    <Select v-model="userInfo.user_rule" placeholder="选择用户角色">
-                        <Option value="2">管理员</Option>
-                        <Option value="3">会员</Option>
-                    </Select>
+                <Select v-model="userInfo.user_rule" placeholder="选择用户角色">
+                    <Option value="2">管理员</Option>
+                    <Option value="3">会员</Option>
+                </Select>
+  
                 </FormItem>
+
                 <FormItem label="性别" prop="gender">
                     <RadioGroup v-model="userInfo.gender">
                         <Radio label="male">男</Radio>
@@ -161,16 +164,7 @@
                 </FormItem>
             </Form>
         </Modal>
-        <Form ref="userInfo" :model="userInfo" :rules="ruleValidate" :label-width="80">
 
-                <FormItem label="用户角色" prop="user_rule">
-                    <Select v-model="userInfo.user_rule" placeholder="选择用户角色">
-                        <Option value="2">管理员</Option>
-                        <Option value="3">会员</Option>
-                    </Select>
-                </FormItem>
-
-            </Form>
     </div>
   </section>
 

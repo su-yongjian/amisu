@@ -7,6 +7,7 @@ import error from '@/view/error'
 import p404 from '@/view/404'
 import p505 from '@/view/505'
 import Login from '@/login'
+import Test from '@/view/test'
 import AddGood from '@/view/table/addGoods'
 
 Vue.use(Router)
@@ -14,6 +15,7 @@ Vue.use(Router)
 const router = new Router({
   routes: [
     {path:'/',redirect:'/home'},
+    
     {
       path: '/',
       name: 'Index',
@@ -36,6 +38,11 @@ const router = new Router({
           },
         }
       ]
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      component: Test
     },
     {
       path: '/login',

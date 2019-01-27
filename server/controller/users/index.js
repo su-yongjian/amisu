@@ -72,7 +72,7 @@ router.post('/registor',async (ctx)=>{
 // 登录
 router.post('/login',async (ctx,next)=>{
   let {username,password} = ctx.request.body ;
-
+  let login_flag = false ;
   await userModel.findOneUser(username).then(res=>{
 
     if(res.length==0){
@@ -82,12 +82,8 @@ router.post('/login',async (ctx,next)=>{
         result:[]
       }
     }else if(res.length && username === res[0].username && common.md5(password)===res[0].password){
-      ctx.session['username'] = username;      
-      ctx.body = {
-          code:0,
-          msg:'succ',
-          result:[]
-      }
+      ctx.session['username'] = username;  
+      login_flag = true ;    
     }else{
       ctx.body = {
         code:1,
@@ -96,5 +92,16 @@ router.post('/login',async (ctx,next)=>{
       }
     }
   })
+
+  if(login_flag) {
+    await userModel.setLoginStatus(username).then(res=>{
+      ctx.body = {
+          code:0,
+          msg:'succ',
+          result:[]
+      }
+    })
+  }
+
 })
 module.exports = router

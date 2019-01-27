@@ -2,7 +2,7 @@ import request from "@/axios/index.js"
 import {config} from "@/config"
 
 export function login(query) {
-    console.log(config);
+    console.log(query);
     return request({
         url: config.baseUrl + '/user/login',
         method: 'post',

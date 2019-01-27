@@ -17,7 +17,6 @@ const Service = Axios.create({
 
 // 设置请求拦截器
 Service.interceptors.request.use(
-
     config=> {
       console.log(config);
       // 在发送请求之前做某件事
@@ -67,7 +66,6 @@ Service.interceptors.response.use(res => {
   return res;
 }, (error) => {
   console.log(error);
-
   // 错误处理方式1：
 //   if (error.data) {
 //     switch (error.data.code) {
@@ -89,7 +87,7 @@ Service.interceptors.response.use(res => {
   // 错误处理方式2：
   // 用户登录的时候会拿到一个基础信息,比如用户名,token,过期时间戳
   // 直接丢localStorage或者sessionStorage
-  if (!window.localStorage.getItem("username")) {
+  if (!window.localStorage.getItem("username") || window.localStorage.getItem("username")=='undefined') {
     // 若是接口访问的时候没有发现有鉴权的基础信息,直接返回登录页
     router.push({
       path: "/login"
@@ -102,17 +100,21 @@ Service.interceptors.response.use(res => {
           path: "/error/403"
         });
       }
-      if (error.response.status === 500) {
+      else if (error.response.status === 500) {
         router.push({
           path: "/error/500"
         });
       }
-      if (error.response.status === 502) {
+      else if (error.response.status === 502) {
         router.push({
           path: "/error/502"
         });
       }
-      if (error.response.status === 404) {
+      else if (error.response.status === 404) {
+        router.push({
+          path: "/error/404"
+        });
+      }else{
         router.push({
           path: "/error/404"
         });

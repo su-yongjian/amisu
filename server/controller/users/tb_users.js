@@ -35,7 +35,11 @@ exports.findByName = ( name ) => {
   let _sql = `select count(*) as count from tb_users where username="${name}";`
   return query( _sql )
 }
-
+// 设置用户登录状态
+exports.setLoginStatus = ( name ) => {
+  let _sql = `update tb_users set login_status=1 where username="${name}";`
+  return query ( _sql )
+}
 // 查找表记录总条数
 exports.findCount = ( table ) => {
   let _sql = `select count(*) as count from ${table} ;`

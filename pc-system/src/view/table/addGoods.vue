@@ -1,17 +1,17 @@
 <template>
     <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
         <FormItem label="商品名称" prop="goods_name">
-            <Input v-model="formValidate.goods_name" placeholder="请输入商品名称"></Input>
+            <Input v-model="formValidate.goods_name" placeholder="请输入商品名称"/>
         </FormItem>
         <FormItem label="商品价格" prop="shops_price">
-            <Input v-model="formValidate.shop_price" placeholder="请输入售价"></Input>
+            <Input v-model="formValidate.shop_price" placeholder="请输入售价"/>
         </FormItem>
 
         <FormItem label="商品描述" prop="goods_desc">
-            <Input v-model="formValidate.goods_desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入商品描述"></Input>
+            <Input v-model="formValidate.goods_desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入商品描述"/>>
         </FormItem>
         <FormItem label="商品库存" prop="goods_stock">
-            <Input type="text" v-model="formValidate.goods_stock" placeholder="请输入商品库存"></Input>
+            <Input type="text" v-model="formValidate.goods_stock" placeholder="请输入商品库存"/>
         </FormItem>
         <FormItem>
             <Button type="primary" @click="handleSubmit('formValidate')">提交</Button>
@@ -57,7 +57,7 @@ export default {
     },
     //在实例创建完成后被立即调用。el 属性目前不可见
     created() {
-      console.log(this.$route.params.is_edit);
+    //   console.log(this.$route.params.is_edit);
 
     },
     methods: {

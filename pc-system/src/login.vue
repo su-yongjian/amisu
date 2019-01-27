@@ -81,6 +81,9 @@ export default {
             _this.$refs[name].validate((valid) => {
                 if (valid) {
 
+                    // this.$axios.post('http://localhost:6000/user/login',{data:_this.formInline}).then(res=>{
+                    //     console.log(res);
+                    // })
                     login(_this.formInline).then(res=>{
                         console.log(res);
                         if(res.status==200&&res.data.code==0){
