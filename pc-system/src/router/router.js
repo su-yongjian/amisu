@@ -30,8 +30,8 @@ const router = new Router({
           },
         },
         {
-          path: 'add',
-          name: 'AddGood',
+          path: 'addGoods',
+          name: 'AddGoods',
           component: AddGood,
           meta:{
             requireLogin:true

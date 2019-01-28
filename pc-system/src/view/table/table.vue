@@ -54,7 +54,7 @@ export default {
                   },
                   on: {
                     click: () => {
-                      this.edit(params.index);
+                      this.edit(params.row.goods_id);
                     }
                   }
                 },
@@ -113,13 +113,15 @@ export default {
         }
       })
     },
-    edit(index) {
-      console.log(index);
+    edit(goods_id) {
+        this.$router.push({
+          path: '/addGoods', query: { is_edit: true ,goods_id:goods_id}
+        })
     },
     add(){
         console.log('新增');
         this.$router.push({
-          name: 'AddGood', params: { is_edit: true }
+          path: '/addGoods', query: { is_edit: false }
         })
     }
   },

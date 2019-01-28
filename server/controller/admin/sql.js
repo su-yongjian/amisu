@@ -34,3 +34,8 @@ exports.findCount = ( table ) => {
   let _sql = `select count(*) as count from ${table} ;`
   return query( _sql )
 }
+// 傳送進來的value一定要跟字段一一對應
+exports.upDateGoods = ( goods_id , value ) => {
+  let _sql = `update tb_goodslist set goods_name=?,shop_price=?,goods_desc=?,goods_stock=?,update_time=? where goods_id='${goods_id}';`
+  return query( _sql, value)
+}

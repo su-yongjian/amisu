@@ -20,23 +20,24 @@
     </Form>
 </template>
 <script>
-import {addGood}  from "@/axios/goodsAPI.js" ;
+import {addGoods,goodsDetail}  from "@/axios/goodsAPI.js" ;
 export default {
     data () {
         return {
             formValidate: {
-                goods_name: '新建商品',
-                goods_desc: '仅仅是拿来测试使用的',
-                shop_price:'1.00',
+                goods_id:0,
+                goods_name: '',
+                goods_desc: '',
+                shop_price:'',
                 goods_stock:''
             },
             ruleValidate: {
                 goods_name: [
                     { required: true, message: '商品名称不能为空', trigger: 'blur' }
                 ],
-                goods_stock: [
-                   { validator: validateStock, trigger: 'blur' }
-                ],
+                // goods_stock: [
+                //    { validator: validateStock, trigger: 'blur' }
+                // ],
                 shop_price: [
                     { required: true, message: '售价不能为空', trigger: 'blur' },
                     { type: 'string', message: '售价不能小于0', trigger: 'blur' }
@@ -47,42 +48,57 @@ export default {
                 ]
             }
         };
-        const validateStock =(rule, value, callback)=>{
-          console.log(rule, value);
+        // const validateStock =(rule, value, callback)=>{
+        //   console.log(rule, value);
 
-          if (!value) {
-            return callback(new Error('Age cannot be empty'));
-          }
-      };
+        //   if (!value) {
+        //     return callback(new Error('Age cannot be empty'));
+        //   }
+        // };
     },
     //在实例创建完成后被立即调用。el 属性目前不可见
     created() {
-    //   console.log(this.$route.params.is_edit);
-
+        console.log(this.$route.query);
+        
+        if(this.$route.query.is_edit){
+            this.getDetail(this.$route.query.goods_id)
+        }
     },
     methods: {
-
-      handleSubmit (name) {
-          this.$refs[name].validate((valid) => {
-              if (valid) {
-                let data = this.formValidate
-                addGood(data).then(res=>{
-                  if(res.data.code==0){
-                      console.log(res.data);
-                      this.$Message.success('新增成功!');
-                      this.$router.go(-1)
-                  }else{
-                    this.$Message.error(res.data.msg);
-                  }
-                })
-              } else {
-                  this.$Message.error('提交失败');
-              }
-          })
-      },
-      handleReset (name) {
-          this.$refs[name].resetFields();
-      }
+        getDetail(id){
+            console.log(id);
+            let data = {} ;
+            data.goods_id = id 
+            goodsDetail(data).then(res=>{
+                console.log(res.data.result);
+                if(res.status==200&&res.data.code==0){
+                    this.formValidate = res.data.result
+                }
+            })
+        },
+        handleSubmit (name) {
+            this.$refs[name].validate((valid) => {
+                if (valid) {
+                    let data = this.formValidate;
+                    console.log(data);
+                    
+                    addGoods(data).then(res=>{
+                    if(res.data.code==0){
+                        console.log(res.data);
+                        this.$Message.success('新增成功!');
+                        this.$router.go(-1)
+                    }else{
+                        this.$Message.error(res.data.msg);
+                    }
+                    })
+                } else {
+                    this.$Message.error('提交失败');
+                }
+            })
+        },
+        handleReset (name) {
+            this.$refs[name].resetFields();
+        }
     }
 }
 </script>

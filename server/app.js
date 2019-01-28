@@ -10,7 +10,6 @@ const onerror = require('koa-onerror')
 
 const bodyparser = require('koa-bodyparser')
 
-
 // token
 const koaJwt = require('koa-jwt') //路由权限控制
 

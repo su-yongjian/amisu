@@ -8,12 +8,14 @@ export function tableList(query){
     })
 }
 
-export function addGood(query){
-  return request({
-      url: config.baseUrl + '/admin/addGoods',
-      method: 'post',
-      data: query
-  })
+export function addGoods(query){
+    console.log(query);
+    
+    return request({
+        url: config.baseUrl + '/admin/addGoods',
+        method: 'post',
+        data: query
+    })
 }
 
 export function deleteGoods(query){
@@ -22,4 +24,12 @@ export function deleteGoods(query){
         method: 'post',
         data: query
     })
-  }
+}
+
+export function goodsDetail(query){
+    return request({
+        url: config.baseUrl + '/admin/goodsDetail',
+        method: 'post',
+        data: query
+    })
+}
