@@ -85,8 +85,8 @@ export default {
   //	创建实例时就会触发
   created() {
     this.getList();
-    let da = new Date(1548063383140);
-    console.log(da.toLocaleDateString().replace(/\//g, "-") + " " + da.toTimeString().substr(0, 8));
+    // let da = new Date(1548063383140);
+    // console.log(da.toLocaleDateString().replace(/\//g, "-") + " " + da.toTimeString().substr(0, 8));
 
   },
   mounted() {},
@@ -95,11 +95,8 @@ export default {
   methods: {
     getList(){
       tableList().then(res=>{
-
         if(res.status==200&&res.data.code==0){
           this.list = res.data.results;
-          console.log(this.list);
-
         }
       })
     },
@@ -107,10 +104,10 @@ export default {
       this.$refs.selection.selectAll(status);
     },
     remove(index,id) {
-      console.log(index,id);
       deleteGoods({goods_id:id}).then(res=>{
         if(res.status==200&&res.data.code==0){
           this.$Message.success('删除成功!');
+          this.getList();
         }else{
           this.$Message.error(res.data.msg);
         }

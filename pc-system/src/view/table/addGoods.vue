@@ -8,7 +8,7 @@
         </FormItem>
 
         <FormItem label="商品描述" prop="goods_desc">
-            <Input v-model="formValidate.goods_desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入商品描述"/>>
+            <Input v-model="formValidate.goods_desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入商品描述"/>
         </FormItem>
         <FormItem label="商品库存" prop="goods_stock">
             <Input type="text" v-model="formValidate.goods_stock" placeholder="请输入商品库存"/>
@@ -69,7 +69,8 @@ export default {
                 addGood(data).then(res=>{
                   if(res.data.code==0){
                       console.log(res.data);
-                      this.$Message.success('提交成功!');
+                      this.$Message.success('新增成功!');
+                      this.$router.go(-1)
                   }else{
                     this.$Message.error(res.data.msg);
                   }
