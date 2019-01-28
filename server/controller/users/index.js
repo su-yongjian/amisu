@@ -1,9 +1,10 @@
 const Router = require("koa-router");
-// const { query } = require("../../libs/koa-better-mysql.js");
 const common = require("../../libs/common");
 const userModel = require('./tb_users')
-// const user_router = require("./user");
 const moment = require('moment');
+
+const jsonwebtoken = require('jsonwebtoken')
+
 
 let router = new Router({ prefix:"/user"})
 
@@ -82,8 +83,19 @@ router.post('/login',async (ctx,next)=>{
         result:[]
       }
     }else if(res.length && username === res[0].username && common.md5(password)===res[0].password){
-      ctx.session['username'] = username;  
-      login_flag = true ;    
+      // ctx.session['username'] = username;  
+
+      const rule = {
+        name:username,
+      }
+      const keys = "amysu";
+      const expirestime = 3600 ;
+      const token = jsonwebtoken.sign(rule,keys,{expiresIn:expirestime})
+      ctx.body = {
+          code:0,
+          msg:'succ',
+          token:'Bearer ' + token 
+      }
     }else{
       ctx.body = {
         code:1,
@@ -92,16 +104,5 @@ router.post('/login',async (ctx,next)=>{
       }
     }
   })
-
-  if(login_flag) {
-    await userModel.setLoginStatus(username).then(res=>{
-      ctx.body = {
-          code:0,
-          msg:'succ',
-          result:[]
-      }
-    })
-  }
-
 })
 module.exports = router

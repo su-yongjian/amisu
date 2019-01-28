@@ -68,7 +68,7 @@ export default {
         
     },
     mounted() {
-        this.frame()
+        // this.frame()
     },
 //	检测视图值变化触发，有改变就会触发
     computed:{
@@ -87,7 +87,9 @@ export default {
                     login(_this.formInline).then(res=>{
                         console.log(res);
                         if(res.status==200&&res.data.code==0){
-                            localStorage.setItem("username",this.formInline.user);
+                            localStorage.setItem("username",this.formInline.username);
+                            localStorage.setItem('token', res.data.token);
+                            localStorage.setItem('token_exp', new Date().getTime());
                             this.$Message.success('登录成功');
                             this.$router.push("/");
                         }else{
