@@ -1,6 +1,6 @@
 const Router = require("koa-router");
 const { query } = require("../../libs/koa-better-mysql.js");
-const common = require("../../libs/common");
+const proving = require('../../token/proving')
 const goodsModel = require('./sql')
 const {
   QUERY_TABLE,
@@ -8,7 +8,6 @@ const {
   UPDATE_TABLE,
   DELETE_TABLE
 } = require("../../utils/sql.js");
-const user_router = require("./sql");
 
 let router = new Router({ prefix: "/admin" });
 
@@ -20,32 +19,43 @@ router.get("/", async (ctx, next) => {
   };
 });
 
-// let password = '123456';
-// let username = 'amysu_'+ Math.floor(Math.random()*100);
-// let id = common.uuid()
-// password = common.md5(password)
-// let sql =  `insert into tb_user (ID,username,password) values('${id}','${username}','${password}')`;
 router.get("/goodsList", async (ctx, next) => {
-  let key = "";
-  let val = "";
-  let sql = QUERY_TABLE("tb_goodslist", { key, val });
-  console.log(sql);
-  let dbdata = await query(sql);
-
-  dbdata.map((v, idx) => {
-    let ndate = new Date(parseInt(v.update_time));
-    v.update_time =
-      ndate.toLocaleDateString().replace(/\//g, "-") +
-      " " +
-      ndate.toTimeString().substr(0, 8);
-    return v;
-  });
-
-  ctx.body = {
-    code: 0,
-    msg: "succ",
-    results: dbdata
-  };
+  let token = ctx.request.header.authorization ;
+  if(token){
+    let res = proving(token);
+    console.log(res);
+    if(res && res.exp <= new Date()/1000){
+      ctx.body = {
+        message: 'token过期',
+        code:3
+      };
+    }else{
+      let key = "";
+      let val = "";
+      let sql = QUERY_TABLE("tb_goodslist", { key, val });
+      console.log(sql);
+      let dbdata = await query(sql);
+    
+      dbdata.map((v, idx) => {
+        let ndate = new Date(parseInt(v.update_time));
+        v.update_time = ndate.toLocaleDateString().replace(/\//g, "-") +  " " +
+          ndate.toTimeString().substr(0, 8);
+        return v;
+      });
+    
+      ctx.body = {
+        code: 0,
+        msg: "succ",
+        results: dbdata
+      };
+    }
+  }else{
+    ctx.body = {
+      msg:'没有token',
+      code:401
+    }
+  }
+  
 });
 router.post("/addGoods", async (ctx, next) => {
   let goods_name = ctx.request.body.goods_name;

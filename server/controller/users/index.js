@@ -3,7 +3,7 @@ const common = require("../../libs/common");
 const userModel = require('./tb_users')
 const moment = require('moment');
 
-const jsonwebtoken = require('jsonwebtoken')
+const addtoken = require('../../token/addtoken')
 
 
 let router = new Router({ prefix:"/user"})
@@ -73,7 +73,7 @@ router.post('/registor',async (ctx)=>{
 // 登录
 router.post('/login',async (ctx,next)=>{
   let {username,password} = ctx.request.body ;
-  let login_flag = false ;
+
   await userModel.findOneUser(username).then(res=>{
 
     if(res.length==0){
@@ -83,17 +83,12 @@ router.post('/login',async (ctx,next)=>{
         result:[]
       }
     }else if(res.length && username === res[0].username && common.md5(password)===res[0].password){
-      // ctx.session['username'] = username;  
 
-      const rule = {
-        name:username,
-      }
-      const keys = "amysu";
-      const expirestime = 3600 ;
-      const token = jsonwebtoken.sign(rule,keys,{expiresIn:expirestime})
+      let token = addtoken(res[0])
       ctx.body = {
           code:0,
           msg:'succ',
+          username:res[0].username,
           token:'Bearer ' + token 
       }
     }else{

@@ -89,7 +89,6 @@ export default {
                         if(res.status==200&&res.data.code==0){
                             localStorage.setItem("username",this.formInline.username);
                             localStorage.setItem('token', res.data.token);
-                            localStorage.setItem('token_exp', new Date().getTime());
                             this.$Message.success('登录成功');
                             this.$router.push("/");
                         }else{

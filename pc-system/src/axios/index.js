@@ -26,60 +26,38 @@ Service.interceptors.request.use(config=> {
 
       // 若是有做鉴权token , 就给头部带上token
       // 若是需要跨站点,存放到 cookie 会好一点,限制也没那么多,有些浏览环境限制了 localstorage 的使用
-      console.log(localStorage.token);
-      
       if (localStorage.token) {
         config.headers.Authorization = localStorage.token;
       }
       return config;
   },error => {
+    console.log(error);
     return Promise.reject(error);
   }
 )
 
 // 响应拦截  http 请求回来的一些状态码，包括我们自己的服务器返回的错误码进行一个逻辑处理。
-Service.interceptors.response.use(response => {
-  console.log(response);
-  
+Service.interceptors.response.use(res => {
+  console.log(res);
   //对响应数据做些事
-  // if (res.data && !res.data.success) {
-  //     Message({
-  //         //  饿了么的消息弹窗组件,类似toast
-  //         showClose: true,
-  //         message: res.data.error.message.message ?
-  //         res.data.error.message.message :
-  //         res.data.error.message,
-  //         type: "error"
-  //     });
-  //     return Promise.reject(res.data.error.message);
-  // }
-  return response;
+  if (res.data && res.data.code==401) {
+      // this.$Message.error('token失效，请重新登录');
+      // 清除token
+      localStorage.removeItem('token')
+      router.push({
+        path:'/login'
+      })
+  }
+  return res;
 }, (error) => {
   console.log(error);
   
-  // 错误处理方式1：
-  //   if (error.data) {
-  //     switch (error.data.code) {
-  //       case 401:
-  //         // 返回 401 清除token信息并跳转到登录页面
-  //         // store.commit("del_token");
-  //         router.push({
-  //           path: "/login",
-  //           //   记录原来的页面路径用于登录后调回原页面
-  //           query: {
-  //             redirect: router.currentRoute.fullPath
-  //           }
-  //         });
-  //         break;
-  //     }
-  //   }
-
-
   // 错误处理方式2：
   const {status} = error.response ;
+
   // 直接丢localStorage或者sessionStorage
   if(status == 401) {
-    Message.error('token值无效，请重新登录');
+    this.$Message.error('token值无效，请重新登录');
     // 清除token
     localStorage.removeItem('token')
     router.push({
