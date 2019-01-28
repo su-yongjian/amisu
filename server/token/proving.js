@@ -1,5 +1,5 @@
 const jsonwebtoken = require('jsonwebtoken') ;
-const serect = 'token' ;
+const serect = 'my_token' ;
 module.exports = (tokens) => {
     if(tokens) {
         let token = tokens.split(' ')[1];

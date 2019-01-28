@@ -24,29 +24,32 @@ router.get("/goodsList", async (ctx, next) => {
   if(token){
     let res = proving(token);
     console.log(res);
+
     if(res && res.exp <= new Date()/1000){
       ctx.body = {
-        message: 'token过期',
+        msg: 'token过期',
         code:3
       };
-    }else{
+    }else if(res && res.secret=='my_token'){
       let key = "";
       let val = "";
       let sql = QUERY_TABLE("tb_goodslist", { key, val });
-      console.log(sql);
       let dbdata = await query(sql);
-    
       dbdata.map((v, idx) => {
         let ndate = new Date(parseInt(v.update_time));
         v.update_time = ndate.toLocaleDateString().replace(/\//g, "-") +  " " +
           ndate.toTimeString().substr(0, 8);
         return v;
       });
-    
       ctx.body = {
         code: 0,
         msg: "succ",
         results: dbdata
+      }
+    }else {
+      ctx.body = {
+        msg: 'token过期',
+        code:401
       };
     }
   }else{
@@ -85,7 +88,9 @@ router.post("/addGoods", async (ctx, next) => {
       let sear_data = await query(sear_id);
       let del_id = sear_data[0].goods_id;
       let delSql = `delete from tb_goodslist where goods_id=${del_id}`;
-      let delbdata = await query(delSql);
+
+      await query(delSql);
+
       let key = "goods_name,goods_desc,shop_price,goods_stock,update_time";
       let val = `'${goods_name}','${goods_desc}','${shop_price}','${goods_stock}','${update_time}'`;
       let insertSql = INSERT_TABLE("tb_goodslist", { key, val });
