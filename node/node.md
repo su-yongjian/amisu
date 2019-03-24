@@ -83,4 +83,49 @@ server.listen(3002)
 
 node路由：
 
+全局处理post请求:
+```
+const getPostData = (req) => {
+    const promise = new Promise((resolve,reject)=>{
+        if(req.method !== 'POST'){
+            resolve({})
+            return
+        }
+        if(req.headers['content-type'] !=='application/json'){
+            resolve({})
+            return
+        }
 
+        let postData = '' ;
+        // 存数据
+        req.on('data',chunk=>{
+            postData+=chunk.toString()
+        })
+        // 监听数据结束
+        req.on('end',()=>{
+           
+            if(!postData){
+                resolve({})
+                return
+            }else{
+                resolve(
+                    JSON.parse(postData)
+                )
+            }
+        })
+    })
+    return promise
+}
+
+```
+
+开发过程是一个循序渐进的过程，先返回假数据调通数据接口，然后再做链接数据库的处理
+路由 router 和业务处理controller分开模块,便于维护
+
+补充，路由和API
+API：前端和后端，不同子系统之间的对接的术语
+url （路由）·api/blog/list· get ,输入，输出
+
+
+路由：API的一部分
+后端系统内部的一个定义模块

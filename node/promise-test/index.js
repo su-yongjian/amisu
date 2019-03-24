@@ -80,3 +80,6 @@ getFileNmaePromist('a.json').then(res=>{
          
      }
 })
+
+// async await
+// koa2

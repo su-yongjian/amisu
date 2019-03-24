@@ -38,7 +38,32 @@ const getDetail = ( id ) =>{
     
 }
 
+const newBlog = (blogData={}) =>{
+    // blogData 是一个博客对象，包含，title，content属性
+    console.log('blogData....',blogData);
+    
+    return {
+        id:3//表示每次新建一个就插入到数据表里面
+
+    }
+}
+
+const updateBlog = (id,blogData={}) =>{
+    // blogData 是一个博客对象，包含，title，content属性
+    console.log('update....',id,blogData);
+    
+    return true
+}
+
+const delBlog = (id) =>{
+    console.log('删除博客id=',id);
+    
+    return true
+}
 module.exports = {
     getList,
-    getDetail
+    getDetail,
+    newBlog,
+    updateBlog,
+    delBlog
 }
