@@ -43,9 +43,11 @@ let tb_users =
   );`
 // 建用户表
 createTable(tb_users)
+
 let tb_goodslist =
   `create table if not exists tb_goodslist(
     goods_id INT NOT NULL AUTO_INCREMENT,
+    is_delete BIT NOT NULL Default 1 COMMENT '是否删除',
     goods_name VARCHAR(255) NOT NULL COMMENT '商品名称',
     shop_price VARCHAR(100) NOT NULL COMMENT '商品价格',
     goods_desc VARCHAR(100) NOT NULL COMMENT '商品描述',
@@ -53,6 +55,6 @@ let tb_goodslist =
     update_time VARCHAR(100) NOT NULL COMMENT '上传时间',
     PRIMARY KEY ( goods_id )
   );`
-// 建用户表
-createTable(tb_users)
+// 建商品表
+createTable(tb_goodslist)
 module.exports = {query}
