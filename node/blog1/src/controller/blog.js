@@ -1,4 +1,6 @@
+const {query} = require('../../config/node-sql.js')
 
+const {exec} = require('../db/mysql')
 // 获取博客列表的controller函数
 /**
  * 
@@ -6,28 +8,25 @@
  * @param {关键字} keyword 
  */
 const getList = (author,keyword) =>{
-    return [
-        {
-            id:1,
-            title:'标题A',
-            content:'内容A',
-            createTime:'1553419096666',
-            author:'zhangsan'
-        },
-        {
-            id:2,
-            title:'标题B',
-            content:'内容B',
-            createTime:'1553419137369',
-            author:'LISI'
-        }
-    ]
+    let _sql = `select * from tb_blogs where 1=1 `
+    if(author) {
+        _sql+= `and author='${author}' `
+    }
+    if(keyword) {
+        _sql =`and title like '%${keyword}%' `
+    }
+    _sql+=`order by create_time desc;`;
+    console.log('sql=',_sql);
+    
+    return exec(_sql)
 }
 /**
  * 
  * @param {*} id :博客列表id
  */
 const getDetail = ( id ) =>{
+    let sql = `select * from tb_blogs where 1=1 and id=${id} order by createTime;` ;
+
     return  {
         id:2,
         title:'标题B',
