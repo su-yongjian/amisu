@@ -1,6 +1,6 @@
 // const {query} = require('../../config/node-sql.js')
 
-// const {exec} = require('../db/mysql')
+const {exec} = require('../db/mysql')
 // 获取博客列表的controller函数
 /**
  * 
@@ -26,25 +26,18 @@ const getList = (author,keyword) =>{
  */
 const getDetail = ( id ) =>{
     let sql = `select * from tb_blogs where 1=1 and id=${id} order by createTime;` ;
-
-    return  {
-        id:2,
-        title:'标题B',
-        content:'内容B',
-        createTime:'1553419137369',
-        author:'LISI'
-    }
+    // return exec(_sql)
+    console.log(exec(_sql));
     
 }
 
 const newBlog = (blogData={}) =>{
     // blogData 是一个博客对象，包含，title，content属性
-    console.log('blogData....',blogData);
+    let {title,content,create_time,author} = blogData
+    let _sql = `insert into tb_blogs (title,content,create_time,author) values('${title}','${content}',${create_time},'${author}');`
     
-    return {
-        id:3//表示每次新建一个就插入到数据表里面
-
-    }
+    return exec(_sql)
+    
 }
 
 const updateBlog = (id,blogData={}) =>{

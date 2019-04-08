@@ -15,6 +15,7 @@ if(env === 'dev'){
     database:'blog'
   }
 }
+
 if(env === 'production'){
   MYSQL_CONF = {
     port:3306,

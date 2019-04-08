@@ -1,4 +1,5 @@
 常用sql语句
+### 插入：INSERT INTO table (xxx,xxx,xxx) VALUES(xxx,xxxx,xxx)
 ### 查询：
   SELECT 列名(或者*，表示所有列) FROM 表名 WHERE 筛选条件;
 

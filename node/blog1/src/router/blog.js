@@ -20,6 +20,8 @@ const handleBlogRouter = ( req , res) =>{
         const author = req.query.author || '' ;
         const keyword = req.query.keyword || '' ;
         const list = getList(author,keyword) ;
+        console.log('list=',list);
+        
         return new SuccessModel(list)
     }
     //获取博客详情
@@ -29,11 +31,22 @@ const handleBlogRouter = ( req , res) =>{
         return new SuccessModel(detail)
     }
     // 新建博客
-    if(method==='POST' && req.path === '/api/blog/new'){
-        const blogData = req.body ;
-        const data = newBlog(blogData)
-
-        return new SuccessModel(data)
+    if(method==='GET' && req.path === '/api/blog/new'){
+        // const blogData = req.body ;
+        const blogData = req.query ;
+        let title = '标题1';
+        let content = '文章内容1。。。';
+        let date = new Date();
+        let create_time = date.getTime();
+        let author = '匿名作者' ;
+        
+        if(Object.keys(blogData).length==0){
+            blogData.title = title ;
+            blogData.content = content ;
+            blogData.create_time = create_time ;
+            blogData.author = author ;
+        }
+        return newBlog(blogData)
     }
     // 更新一篇博客
     if(method==='POST' && req.path === '/api/blog/update'){
