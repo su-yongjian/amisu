@@ -1,6 +1,6 @@
-const {query} = require('../../config/node-sql.js')
+// const {query} = require('../../config/node-sql.js')
 
-const {exec} = require('../db/mysql')
+// const {exec} = require('../db/mysql')
 // 获取博客列表的controller函数
 /**
  * 
