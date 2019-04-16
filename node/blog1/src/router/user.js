@@ -23,14 +23,6 @@ const handleUserRouter = (req,res) =>{
         // const {username,password} = req.query ;//
         let res = '' ;
         let username = 'amusi' ,password=123;
-        registUser(username,password).then(ret=>{
-            if(ret){
-                return new SuccessModel('注册成功')
-            }else{
-                return new ErrorModel('密码或者账号错误')
-            }
-        })
-
     }
 }
 
