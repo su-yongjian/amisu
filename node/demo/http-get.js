@@ -8,5 +8,5 @@ const server = http.createServer((req,res)=>{
     
     res.end(JSON.stringify(req.query))//将querystring转为字符串返回
 })
-server.listen(30001);
+server.listen(3001);
 // http://localhost:30001/?sd=1    ==> {"sd":"1"}
