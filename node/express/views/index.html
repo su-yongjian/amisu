@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+  <style>
+    table{
+      width: 500px;
+    }
+    tr{
+      display: flex;
+    }
+    th,td{
+      flex: 1;
+      text-align: center;
+      border: 1px solid #dbdbdb;
+    }
+  </style>
+</head>
+<body>
+  
+  <ul>
+      <!-- {{each list value index}}
+        <li>序号：{{value.id}}姓名：{{value.name}}年龄：{{value.age}}</li>
+      {{/each}} -->
+      <table>
+        <tr>
+          <th>序号</th>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>操作</th>
+        </tr>
+        <tbody>
+            {{each list value index}}
+              <tr>
+                  <td>{{value.id}}</td>
+                  <td>{{value.name}}</td>
+                  <td>{{value.age}}</td>
+                  <td><a href="/stu/del/"+{{value.id}}>删除</a></td>
+              </tr>
+              {{/each}}
+        </tbody>
+      </table>
+  </ul>
+  <a href="/stu/add">添加</a>
+</body>
+</html>
