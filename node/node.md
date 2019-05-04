@@ -139,4 +139,167 @@ url （路由）·api/blog/list· get ,输入，输出
 2：cookie中村userid，server端对应username
 
 
+#### global 全局变量
++ 通俗的理解就是将当前文件下的变量暴露为全局变量：
++ 如;a.js文件下定义变量暴露出去:  global.test = 200;那么在其他文件如b.js下导入文件a.js直接就可以使用test的值
+
+#### process 进程
+
+- 常用的	const { argv ,argv0 ,execArgv , execPath} = process ;
+
+  + argv : 是一个数组，包含一个nodejs的安装路径以及当前执行文件的路径
+  + execPath 调用的脚本路径，即nodejs的安装路径
+
+  const {dev} = process : dev
+
+  
+
+  setImmediate(()=>{}) ：同步的执行完之后就会执行和process.nextTick(()=>{})类似，当时比setImmediate执行得早
+
+#### Debug
+
++ inspector   node  --inspector-brk  文件名：在chrome上打开 <chrome://inspect/#devices> 点击inspect就会进入chrome熟悉的调试环境
+
+#### path
+
+const path = require('path')
+
+const mod = require('./_names.js')
+
+console.log('__dirname',__dirname);//e:\amisu\node\API\path
+
+console.log('process.cwd()',process.cwd());//e:\amisu\node\API\path
+
+console.log('./',path.resolve('./'));//e:\amisu\node\API\path
+
+区别：
+
+__dirname 、总是返回文件的绝对路径
+
+ process.cwd() 总是返回执行node命令所在文件夹路径
+
+path.resolve()  
+
+#### Buffer
+
+处理二进制数据流，实例类似整数数组，大小固定，被创建时就已经确定了，无法调整大小
+
+````javascript
+const buf1 = Buffer.alloc(10)//创建一个长度为10，且用0填充的Buffer
+console.log(buf1)//<Buffer 00 00 00 00 00 00 00 00 00 00>
+const buf2 = Buffer.alloc(5,1)//创建一个长度为5，且用1填充的Buffer
+console.log(buf1)//<Buffer 01 01 01 01 01>
+Buffer.from([1,2,3])//<Buffer 01 02 03>
+Buffer.from('test')//<Buffer 74 64 73 74>
+Buffer.from('test','base64')//<Buffer b5 eb 2d>
+Buffer.byteLength('test')//4
+Buffer.byteLength('中文')//6
+Buffer.isBuffer({})//false
+Buffer.isBuffer(Buffer.from('test'))//true
+Buffer.concat()拼接
+const buf1 = Buffer.alloc(5)
+const buf2 = Buffer.alloc(3)
+const buf = Buffer.concat([buf1,buf2])//
+buf.copy()复制
+buf.equals(buf)比较两个buf内容是否相等
+buf.indexOf('ws')找buf是否包含有buf是否包含ws,找到就会返回第一个，否则返回-1
+````
+
+
+
+#### Event
+
+````javascript
+const EventEmitter = require('events')
+class CunstomEvent extends EventEmitter {}
+const ce = new CunstomEvent() ;
+// 错误触发
+ce.on('error',  err => {
+  console.log(err);
+  
+})
+ce.on('event',()=>{
+    console.log('event')
+})
+// 表示只触发一次
+ce.once('once',  once => {
+  console.log(once);
+})
+
+setInterval(()=>{
+  ce.emit('once',"once")
+},1000 )
+
+ce.emit('error', new Error('oops'))
+
+/// 移除所有的test事件
+ce.removeAllListeners('test',()=>{})
+````
+
+#### fs
+
+````javascript
+fs.unlink('/tpl/hello',(err)=>{
+    if(err) throw err;
+    console.log('成功移除/tpl/hello')
+})
+// 读文件---------------------------------------------------
+const fs = require('fs')
+// 异步
+fs.readFile('../event/event.js','utf8',(err,data)=>{
+  if(err) throw err
+  console.log(data);//是一个buffer数据流
+  
+})
+// 同步,有返回
+let data = fs.readFileSync('../path/_names.js','utf8')
+console.log('data',data);
+// 读取相对于当前层的文件和文件夹名称
+fs.readdir('../',(err,data)=>{
+  if(err) throw err
+  console.log('readdir',data);//readdir [ 'event', 'fs', 'path' ]
+  
+})
+// 创建文件夹
+fs.mkdir('text',(err)=>{
+  if(err) throw err
+  console.log('mkdir');
+})
+// 删除文件夹
+fs.rmdir('text',(err)=>{
+  if(err) throw err
+  console.log('rmdir');
+})
+
+// 写文件-----------------------------------------------------
+// 覆盖写
+fs.writeFile('./test.txt','this is a test',{encoding:'utf8'},(err)=>{
+  if(err) throw err
+  console.log('done !');
+  
+})
+// 可用于判断文件是否存在
+fs.stat('./test1.txt',(err,data)=>{
+  if(err) throw('文件不存在')
+  
+  console.log(data.isFile());
+  console.log(data.isDirectory());
+  console.log(data);
+})
+// 重命名
+fs.rename('./test.txt','test1.txt',(err)=>{
+  if(err) throw(err)
+  console.log('重命名成功');
+})
+// 删除文件
+fs.unlink('./test1.txt',(err)=>{
+  if(err) throw(err)
+  console.log('删除成功');
+})
+
+// 监听文件变化  
+fs.watch('./',{recursive:true},(eventType,filename)=>{
+  console.log(eventType,filename);
+})
+````
 

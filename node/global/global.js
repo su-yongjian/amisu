@@ -1,0 +1,2 @@
+
+global.testvar = 100;
