@@ -297,9 +297,57 @@ fs.unlink('./test1.txt',(err)=>{
   console.log('删除成功');
 })
 
-// 监听文件变化  
+// 监听文件变化  ：监听当前文件目录下的文件变化
 fs.watch('./',{recursive:true},(eventType,filename)=>{
   console.log(eventType,filename);
 })
+
+// readstream：读取流
+const fs = require('fs')
+const rs = fs.createReadStream('./fs.js')
+rs.pipe(process.stdout)
+
+// 写流
+const fs = require('fs')
+const ws = fs.createWriteStream('./test.txt')
+let tid =setInterval(()=>{
+  const num =parseInt(Math.random()*10) 
+  if(num<5){
+    ws.write(num+'')
+  }
+  else{
+    clearInterval(tid)
+    ws.end()
+  }
+},200 )
+ws.on('finish',()=>{
+  console.log('finish');
+  
+})
+
+// promisify  转为promise
+const fs = require('fs')
+const promisify= require('util').promisify;
+
+const read = promisify(fs.readFile);
+
+read('./fs.js').then(res=>{
+  console.log(res.toString());
+  
+}).catch(ex=>{
+  console.log(ex);
+  
+})
+
+// async await
+async function test(){
+  try {
+    const content =await read('./fs.js')
+    console.log('----------------------content---------------',content.toString());
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
 ````
 
