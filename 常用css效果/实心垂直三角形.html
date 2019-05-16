@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>实心垂直三角形</title>
+    <style>
+      .vertical_left_top {
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+
+      .vertical_left_top::before {
+        border: 25px solid;
+        border-color: red transparent transparent red;
+        display: inline-block;
+        content: "";
+      }
+
+      .vertical_right_bottom {
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 70px;
+      }
+
+      .vertical_right_bottom::before {
+        border: 25px solid;
+        border-color: transparent red red transparent;
+        display: inline-block;
+        content: "";
+      }
+
+      .vertical_right_top {
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 140px;
+      }
+
+      .vertical_right_top::before {
+        border: 25px solid;
+        border-color: red red transparent transparent;
+        display: inline-block;
+        content: "";
+      }
+
+      .vertical_left_bottom {
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 210px;
+      }
+
+      .vertical_left_bottom::before {
+        border: 25px solid;
+        border-color: transparent transparent red red;
+        display: inline-block;
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical_left_top"></div>
+    <br />
+    <div class="vertical_right_bottom"></div>
+    <br />
+    <div class="vertical_right_top"></div>
+    <br />
+    <div class="vertical_left_bottom"></div>
+  </body>
+</html>
