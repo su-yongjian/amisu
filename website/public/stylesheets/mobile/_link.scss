@@ -1,0 +1,80 @@
+/**
+* 联系我们页面样式
+*/
+.link-wrapper{
+
+    .link-title{
+        background: #EFEFF4;
+        @include fontFlex(22);
+        color: #333333;
+        padding: px2rem(10) px2rem(15);
+        font-weight: bold;
+        line-height: px2rem(30);
+    }
+    .company-name{
+        @include fontFlex(28);
+        color: #333333;
+        padding: px2rem(20);
+        border-bottom: 1px solid $lineColor;
+    }
+
+    .link-box{
+        margin-top: px2rem(30);
+        padding:0 px2rem(18) px2rem(15) px2rem(18); 
+    }
+    .link-info{
+        display: flex;
+        margin-bottom: px2rem(15);
+        .icon{
+            width: px2rem(24);
+            height: px2rem(24);
+            margin-right: px2rem(15);
+        }
+        .phone-icon {
+            @include imgBg("mobile/lianxi.png")
+        }
+        .address-icon{
+            @include imgBg("mobile/dizhi.png")
+        }
+        .p-style{
+            margin-bottom: px2rem(6);
+            @include fontFlex(14);
+            color: #333333;
+        }
+    }
+    .form{
+        padding: px2rem(15) px2rem(15) px2rem(30) px2rem(15);
+        text-align: center;
+    }
+    .input-item{
+        display: flex;
+        align-items: center;
+        margin-bottom: px2rem(20);
+        .title{
+            align-self: flex-start;
+            width: px2rem(60);
+        }
+    }
+    .input,.textarea-border{
+        flex: 1;
+        padding: px2rem(10) px2rem(6);
+        @include fontFlex(14);
+        color: #333333;
+        background: #FFFFFF;
+        border: 1px solid #DBDBDB;
+        border-radius: px2rem(5);
+    }
+    .textarea-border{
+        height: px2rem(120);
+        overflow-y: scroll
+    }
+    .submitBtn{
+        width: px2rem(180);
+        padding: px2rem(10) px2rem(6);
+        background-color: $backgroundColor;
+        @include fontFlex(16);
+        color: #333333;
+        font-weight: bold;
+        border-radius: px2rem(5);
+    }
+}

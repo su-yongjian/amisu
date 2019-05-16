@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>swiperTab</title>
+    <link rel="stylesheet" href="../swiper-4.3.5.min.css">
+    <style>
+        .newsNav{
+            display: flex;
+            flex-wrap: nowrap
+        }
+        .newsNav li{
+            flex: 1;
+            text-align: center;
+        }
+        .newsNav li.active{
+            background-color: yellow;
+        }
+        .newslist{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="news-activity">
+
+        <div id="news-container" class="swiper-container">
+            <ul id="newsNav" class="newsNav">
+                <li class="active">记账熊</li>
+                <li>行业动态</li>
+            </ul>
+
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <ul class="newslist">
+                        <li>微商化妆品渠道管控系统开发请联微商化妆品渠道管控系统开发请联系邱瑶...系邱瑶...</li>
+                        <li>微商化妆品渠道管控系统开发请联微商化妆品渠道管控系统开发请联系邱瑶...系邱瑶...</li>
+                        <li>微商化妆品渠道管控系统开发请联微商化妆品渠道管控系统开发请联系邱瑶...系邱瑶...</li>
+                        <li>微商化妆品渠道管控系统开发请联微商化妆品渠道管控系统开发请联系邱瑶...系邱瑶...</li>
+                    </ul>
+                </div>
+                <div class="swiper-slide">
+                    <ul class="newslist">
+                        <li>微商化妆品渠道管控系统开发请联微商化妆品渠道管控系统开发请联系邱瑶...系邱瑶...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./jquery.min.js"></script>
+<script src="../../js/swiper-4.3.5.min.js"></script>
+<script>
+    var newTag = new Swiper('#news-container',{
+        speed:300,
+        on: {
+            slideChangeTransitionStart: function(){
+                $("#newsNav .active").removeClass('active')
+                $("#newsNav li").eq(newTag.activeIndex).addClass('active')  
+            }
+        }
+        
+    })
+    $('#newsNav li').click(function(){
+        $(this).siblings('li').removeClass('active');
+        $(this).addClass('active'); 
+        var index=$(this).index();
+        newTag.slideTo(index);
+    });
+    $("#newsNav li").click(function(e){
+        e.preventDefault()
+    });
+
+</script>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>滚动列表</title>
+    <!-- <link rel="stylesheet" href="./rScroll.css" /> -->
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="../../css//mobile.css">
+    <style>
+        .roll-wrap{
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+        width: px2rem(375);
+        overflow: hidden;
+        ul{
+            padding:0 px2rem(10);
+            width: px2rem(10000000);
+            position: absolute;
+            background-color:  #F7F7FA;
+        }
+        li{
+            background-color: #FAFAFC;
+            margin: 0 px2rem(5);
+            padding-bottom: px2rem(5);
+            float: left;
+            width: px2rem(160);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            >span{
+                @include fontFlex(15);
+                color: #333333;
+                font-weight:bold;
+                text-align: center;
+                display: inline-block;
+                padding: px2rem(9) 0 px2rem(5) 0;
+            }
+            >p{
+
+                padding: 0 px2rem(8);
+                @include fontFlex(12);
+                color: #333333;
+                text-align: center;
+                @include lineNum(2);
+            }
+        }
+        li>div{
+            background-color: #ffffff;
+            width: 100%;
+            text-align: center;
+        }
+        li img{
+            width: px2rem(100);
+            height: px2rem(100);
+            margin: px2rem(12) auto;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="case-swraper">
+        <div class="roll-wrap" id="e">
+            <ul class="clr">
+                <li>
+                    <div>
+                        <img src="//x.wxzs.co/xw/brandlogo/brand_15.png" />
+                    </div>
+                    <span>季寇</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </li>
+                <li>
+                    <div>
+                        <img src="//x.wxzs.co/xw/brandlogo/brand14.png" />
+                    </div>
+                    <span>古瓷</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+
+                </li>
+
+                <li>
+                    <div>
+                        <img src="//x.wxzs.co/xw/brandlogo/brand_12.png" />
+                    </div>
+                    <span>畅轻宝宝</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+
+                </li>
+
+                <li>
+                    <div>
+                        <img src="//x.wxzs.co/xw/brandlogo/brand_14.png" />
+                    </div>
+                    <span>客福利</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+
+                </li>
+
+                <li>
+                    <div>
+                        <img src="//x.wxzs.co/xw/brandlogo/brand_16.png" />
+                    </div>
+                    <span>你麻痹</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <script src="../../js//jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            /* 有的浏览器第一次加载不会动画  刷新当前页面一次 */
+            var W = $(window).width();
+            $('#e').css({
+                "width": W
+
+            });
+
+            var box0 = $("#e"),
+                v0 = 1; //这里添加滚动的对象和其速率
+            // var box1 = $(".two"),v1 = 1;
+            Rin(box0, v0);
+            // Rin(box1,v1); 
+
+            function Rin($Box, v) { //$Box移动的对象，v对象移动的速率
+                var $Box_ul = $Box.find("ul"),
+                    $Box_li = $Box_ul.find("li"),
+                    // $Box_li_span = $Box_li.find("span"),
+                    left = 0,
+                    s = 0,
+                    timer; //定时器
+                var W = $Box_li.eq(0).outerWidth(true);
+                $Box_li.each(function (index) {
+                    // $($Box_li_span[index]).width($(this).width());//hover
+                    s += $(this).outerWidth(true); //即要滚动的长度
+                    //console.log()
+
+                })
+                //console.log(s)
+
+                window.requestAnimationFrame = window.requestAnimationFrame || function (Tmove) {
+                    return setTimeout(Tmove, 1000 / 60)
+                };
+                window.cancelAnimationFrame = window.cancelAnimationFrame || clearTimeout;
+
+                if (s >= $Box.width()) { //如果滚动长度超出Box长度即开始滚动，没有的话就不执行滚动
+                    $Box_li.clone(true).appendTo($Box_ul);
+                    Tmove();
+
+                    function Tmove() {
+                        //运动是移动left  从0到-s;（个人习惯往左滚）
+                        left -= v;
+                        if (left <= -s) {
+                            left = 0;
+                            $Box_ul.css("left", left)
+                        } else {
+                            $Box_ul.css("left", left)
+                        }
+                        timer = requestAnimationFrame(Tmove);
+                    }
+                    $Box_ul.hover(function () {
+                        cancelAnimationFrame(timer)
+                    }, function () {
+                        Tmove()
+                    })
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

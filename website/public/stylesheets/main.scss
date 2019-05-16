@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+//~ base code
+@import "base/base";
+
+//~ public style
+@import "public/normalize8.0";
+@import "public/init";
+@import "public/common";
+@import "public/iteration/iteration";
+// @import "public/layout";
+
+
+//~ page style
+@import "page/index";
+@import "page/systemCase";
+@import "page/systemFunction";
+@import "page/news";
+@import "page/linkUs";
+@import "page/aboutUs";
+
+
+
+
+

@@ -1,0 +1,59 @@
+/**
+    mobile系统案例样式
+*/
+.case-wrapper{
+    .caseListBox{
+        margin: px2rem(2) px2rem(2);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        li{
+            width: px2rem(181);
+            margin: 0 px2rem(2) px2rem(10) px2rem(2);
+            -webkit-box-shadow: 0px 4px 2px $lineColor outset;
+                    box-shadow: 0px 4px 2px $lineColor outset;
+            .caselist__item{
+                background-color: #ffffff;
+                padding: px2rem(10) px2rem(2);
+                display: flex;
+                align-items: center;
+                .case-thumbnail{
+                    width: px2rem(40);
+                    height: px2rem(40);
+                    margin-right: px2rem(5);
+                }
+            }
+        }
+        .case-logo{
+            width: 100%;
+        }
+        .case-info{
+            flex: 1;
+            .case-text{
+                margin-top: px2rem(4);
+            }
+            .case-title{
+                @include fontFlex(14);
+                line-height: px2rem(18);
+                color: #333333;
+                font-weight: bold;
+            }
+
+            .case-type{
+                @include fontFlex(12);
+                margin-left: px2rem(2);
+                border: 1px solid #323232;
+                border-radius: px2rem(2);
+                padding: 0 px2rem(6);
+            }
+            .case-desc{
+                @include fontFlex(12);
+                color: #333333;
+                @include lineNum(2);
+                line-height: px2rem(16);
+            }
+        }
+    }
+}

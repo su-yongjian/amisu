@@ -1,0 +1,220 @@
+.system-swraper {
+    // 小标题
+    .wechat-inc {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        padding-bottom: 40px;
+        @include fc(18, $basicColor);
+
+        .wechat-icon {
+            display: inline-block;
+            background-image: url('//x.wxzs.co/xw/y02.png');
+            @include wh(18, 18);
+            background-size: 18px 18px;
+            margin: 0 10px;
+        }
+    }
+    // 记账熊主要功能/记账熊系统优势
+    .fn-wrapper{
+        .fn-sys-dsc{
+            @include fc(18,$basicColor);
+            line-height: 30px;
+            text-indent:2em;
+            margin: 10px 0;
+        }
+        .flexRow-nowrap{
+            .itemBox{
+                width: 25%;
+                height: 250px;
+                .flexColunm{
+                      -webkit-box-pack: center;
+                         -ms-flex-pack: center;
+                       justify-content: center;
+                    -webkit-box-shadow: none;
+                            box-shadow: none;
+                }
+                .title{
+                    font-size: 18px;
+                    color: #333333;
+                    text-align: center;
+                    line-height: 20px;
+                }
+                .desc{
+                    max-width: 112px;
+                    font-size: 12px;
+                    color: #151515;
+                    text-align: center;
+                    line-height: 20px;
+                }
+                .icon-dedicated{
+                    background: url('https://x.wxzs.co/xw/zd1.png') no-repeat;
+                    background-size: cover;
+                    margin-bottom: 13px;
+                }
+                .icon-effect{
+                    background: url('https://x.wxzs.co/xw/zd2.png') no-repeat;
+                    background-size: cover;
+                    margin-bottom: 13px;
+                }
+                .icon-easy{
+                    background: url('https://x.wxzs.co/xw/zd3.png') no-repeat;
+                    background-size: cover;
+                    margin-bottom: 13px;
+                }
+                .icon-practical{
+                    background: url('https://x.wxzs.co/xw/zd4.png') no-repeat;
+                    background-size: cover;
+                    margin-bottom: 13px;
+                }
+
+                &:hover .img60x60{
+                    -webkit-animation: scale 0.3s linear 1;
+                            animation: scale 0.3s linear 1;
+                    -webkit-transform: scale(1.2);
+                            transform: scale(1.2);
+                }
+            }
+        }
+    }
+    // 记账熊功能模块
+    .model-wrapper{
+        background-color: $bgColor;
+        .modelBox{
+            background-color: #ffffff;
+        }
+        .itemRow{
+            border-top: 1px solid #EFEFF4;
+            border-right: 1px solid #EFEFF4;
+            border-left: 1px solid #EFEFF4;
+            min-height: 250px;
+            .item-l{
+                width: 25%;
+                @include dispFlex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                .ctr-people{
+                    padding: 15px;
+                    font-size: 24px;
+                    color: #333333;
+                    font-weight: bold;
+                }
+                img{
+                    transition: all 1.2s ease;
+                    &:hover{
+                        transform: scale(1.3);
+                        transition: all 1.2s ease;
+                    }
+
+
+                }
+                // img{
+                //     margin-bottom: 58px;
+                // }
+            }
+            .item-r{
+                @include dispFlexa;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                .table{
+                    @include dispFlex;
+                    border-top: 1px solid  #EFEFF4;
+                    border-left: 1px solid  #EFEFF4;
+                    -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                            flex: 1;
+                    .table-th{
+                        min-width: 110px;
+                        text-align: center;
+                        @include fc(14,$basicColor);
+                        line-height: 20px;
+                        font-weight: bold;
+                        padding: 10px;
+                    }
+                    .table-tr{
+                        -webkit-box-flex: 1;
+                            -ms-flex: 1;
+                                flex: 1;
+                        @include fc(14,$basicColor);
+                        line-height: 20px;
+                        padding: 10px;
+                    }
+                }
+                .table:first-child{
+                    border-top: none;
+                }
+            }
+            &:last-child{
+                border-bottom: 1px solid  #EFEFF4;
+            }
+        }
+        .after-service-Box{
+            margin-bottom: 20px;
+            .itemBox{
+                height: 280px;
+            }
+        }
+ 
+    }
+
+}
+@-webkit-keyframes scale {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    25% {
+        -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    75% {
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+    }
+}
+@keyframes scale {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    25% {
+        -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    75% {
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+    }
+}

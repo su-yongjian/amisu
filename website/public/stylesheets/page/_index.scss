@@ -1,0 +1,315 @@
+.main {
+    width: 100%;
+    background-color: $pageBgColor  ;
+}
+
+.index-wrapper {
+    .bigBg-img{
+        background: url("../images/bg01.png") no-repeat;
+        // background-size: 100% 1280px;
+        background-color: #ffffff;
+    }
+    .img-issue{
+        width: 100%;
+    }
+    // 小标题
+    .wechat-inc{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        padding-bottom: 40px;
+        @include fc(18,$basicColor);
+        .wechat-icon{
+            display: inline-block;
+            background-image: url('//x.wxzs.co/xw/y02.png');
+            @include wh(18,18);
+            background-size: 18px 18px;
+            margin: 0 10px;
+        }
+    }
+    // 小程序管理系统优势
+    .advantage-Box{
+        // background-color: #FFFFFF;
+        .flexColunm{
+
+        }
+    }
+    // 记账熊主要功能介绍
+
+    .fn-wrapper{
+        .fn-sys-dsc{
+            @include fc(18,$basicColor);
+            line-height: 30px;
+            text-indent:2em;
+            margin-top: 10px;
+            // padding-bottom: 60px;
+        }
+        .fn-sys-dsc-pdd_tb{
+            padding-bottom: 60px;
+        }
+        .fn-wrapper__item{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+            img.item-l{
+                @include wh(120,120);
+            }
+            .flexColunm{
+                padding: 20px 0 15px 30px;
+                height: 440px;
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
+                border-right: 1px solid #EFEFF4;
+                background-color: $bodyBgColor;
+                .itemRow{
+                    width: 100%;
+                    .item-r{
+                        line-height: 100px;
+                        @include fc(26,$basicColor);
+                    }
+                    .item-l{
+                        padding-right: 10px;
+                        -webkit-transition: all 1.2s ease;
+                        transition: all 1.2s ease;
+                        &:hover{
+                            -webkit-transform: scale(1.2);
+                                    transform: scale(1.2);
+                            -webkit-transition: all 1.2s ease;
+                            transition: all 1.2s ease;
+
+                        }
+                    }
+                }
+                ul{
+                    width: 100%;
+                    li{
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
+                        line-height: 18px;
+                        margin-bottom: 10px;
+                        //&:hover{
+                        //    padding-left: 10px;
+                        //}
+                    }
+                    li .select {
+                       color: #22AF3A;
+                       font-size: 14px;
+                       line-height: 10px;
+                    //    border: 1px solid #22AF3A;
+                    //    padding: 2px;
+                       border-radius:   2px;
+                       -webkit-border-radius:   2px;
+                       -moz-border-radius:   2px;
+                       -ms-border-radius:   2px;
+                       -o-border-radius:   2px;
+                       margin-right: 4px;
+                       .gougou{
+                           @include wh(16,16);
+                           @include imgBg('gou1.png');
+                       }
+                    }
+                    li .title{
+                        @include fc(14,$basicColor);
+                    }
+                }
+            }
+        }
+    }
+    // 客户案例
+    .out-container{
+        width: 1120px;
+        height: 246px;
+        margin: 0px auto;
+        position: relative;
+    }
+    .in-container {
+        height: 246px;
+        width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        .swiper-button-prev{
+            background-image:url("../images/left.png") ;
+        }
+        .swiper-button-next{
+            background-image:url("../images/right.png") ;
+        }
+    }
+    .swiper-slide {
+        .flexColunm{
+            height: 100%;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            background-color: $bodyBgColor;
+            .logoBox{
+                -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+                        @include wh(120,120);
+                        margin: 15px 0;
+            }
+            .com-logo{
+                width: 100%;
+                height: 100%;
+            }
+            .com-info{
+                width: 100%;
+                background-color: $itemComBgc  ;
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                .com-title{
+                    @include fc(18,$basicColor);
+                    font-weight: bold;
+                    margin-bottom: 8px;
+                    text-align: center
+                }
+                .com-dse{
+                    @include fc(14,$basicColor);
+                    @include lineNum(2);
+                    padding: 0 10px;
+                    text-align: center
+                }
+            }
+
+        }
+    }
+    // 最新资讯
+    .news-wrapper{
+        padding-bottom: 50px;
+        .news-logo{
+            @include wh(400,300);
+            overflow: hidden;
+            vertical-align: top;
+            -webkit-transition: all 1.2s ease;
+            transition: all 1.2s ease;
+        }
+        .item-l-hover:hover .news-logo{
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+            -webkit-transition: all 1.2s ease;
+            transition: all 1.2s ease;
+        }
+        .item-l{
+            overflow: hidden;
+            margin-right: 30px;
+            padding-bottom: 4px;
+            position: relative;
+            &:hover{
+                .news-mask{
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    background: #000;
+                    opacity: .5;
+                }
+            }
+
+
+        }
+        .item-r .item-list li{
+            padding: 12px 0;
+            border-bottom: 1px solid $lineColor;
+        }
+        .item-list{
+            display: none;
+            li:hover a span{
+                color: $linkColor
+            }
+            .item-l{
+                margin-right: 0;
+            }
+        }
+        .active{
+            display: block;
+        }
+        .item-list .item-l{
+            margin-left: 88px;
+        }
+        .item-list .item-r{
+            @include lineNum(1);
+        }
+        nav{
+            border-bottom: 1px solid $lineColor;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            ul{
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
+            }
+            .more{
+                @include fc(14,$tipColor);
+                min-width: 60px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                
+                .icon-right{
+                    display: inline-block;
+                    background-image: url('../images/next.png') ;
+                    @include wh(18,18);
+                    background-size: 18px 18px;
+                }
+            }
+        }
+        nav ul li {
+            float: left;
+            margin-right: 40px;
+            padding: 6px 0 ;
+            position: relative;
+            a span{
+                @include fc(16,$basicColor);
+            }
+        }
+        nav ul li.active{
+            font-weight: bold;
+            &::after{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                content: '';
+                height: 2px;
+                display: block;
+                background-color: $backgroundColor;
+            }
+        }
+
+    }
+
+}

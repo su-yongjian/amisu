@@ -1,0 +1,77 @@
+.navTabFixed{
+    position: fixed;
+    top: px2rem(50);
+    left: 0;
+    right: 0;
+}
+.news-content{
+    padding-top: px2rem(90);
+    padding-bottom: px2rem(60);
+}
+
+
+.dropload-up,
+        .dropload-down {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            font-size: 12px;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0)
+        }
+
+        .dropload-down {
+            height: px2rem(50)
+        }
+
+        .dropload-refresh,
+        .dropload-update,
+        .dropload-load,
+        .dropload-noData {
+            @include fontFlex(14);
+            height: px2rem(50);
+            line-height: px2rem(50);
+            text-align: center
+        }
+
+        .dropload-load .loading {
+            @include fontFlex(14);
+            display: inline-block;
+            height: px2rem(15);
+            width: px2rem(15);
+            border-radius: 100%;
+            margin: px2rem(6);
+            border: px2rem(2) solid #666;
+            border-bottom-color: transparent;
+            vertical-align: middle;
+            -webkit-animation: rotate .75s linear infinite;
+            animation: rotate .75s linear infinite
+        }
+
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg)
+            }
+
+            50% {
+                -webkit-transform: rotate(180deg)
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg)
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            50% {
+                transform: rotate(180deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }

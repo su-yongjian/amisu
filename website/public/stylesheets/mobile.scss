@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+//~ base code
+@import "base/base";
+
+//~ public style
+@import "public/normalize8.0";
+@import "public/init";
+@import "public/common";
+@import "mobile/common";
+//~ page style
+@import "mobile/index";
+@import "mobile/detail";
+@import "mobile/case";
+@import "mobile/news";
+@import "mobile/system";
+@import "mobile/about";
+@import "mobile/link";
+
+

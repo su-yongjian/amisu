@@ -1,0 +1,50 @@
+.case-detail-swraper{
+    box-sizing: border-box;
+    padding:0 px2rem(15);
+    .case-detail-title{
+        @include fontFlex(20);
+        color:#333333;
+        line-height: px2rem(28);
+        font-weight: bold;
+        padding:px2rem(20) 0 px2rem(6) 0;
+
+    }
+    .case-detail-time{
+        @include fontFlex(13);
+        color:#777777;
+    }
+    .case-detail-content{
+        margin-top: px2rem(15);
+        background-color: #ffffff;
+        padding-bottom: px2rem(32);
+        p{
+            @include fontFlex(16);
+            color:#333333;
+            line-height: px2rem(28);
+        }
+        img{
+            width: 100%;
+            margin: px2rem(15) auto;
+        }
+    }
+    .tabpage{
+        padding-bottom: px2rem(15);
+        >p{
+            margin-bottom: px2rem(15);
+            display: flex;
+            >span{
+                display: block;
+                @include fontFlex(14);
+                line-height: px2rem(24);
+                color:#777777;
+                min-width: px2rem(60);
+            }
+
+            a{
+                @include fontFlex(14);
+                line-height: px2rem(20);
+                color:#2872E0;
+            }
+        }
+    }
+}

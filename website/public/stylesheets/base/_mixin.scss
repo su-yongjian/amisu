@@ -1,0 +1,87 @@
+//~ Some Mixins
+@mixin fontFlex($size:12) {
+  font-size: $size + px;
+  [data-dpr="2"] &{
+    font-size: $size*2 + px;
+  }
+  [data-dpr="3"] &{
+    font-size: $size*3 + px;
+  }
+}
+@mixin wh($w,$h){
+  width: $w  + px;
+  height: $h + px;
+}
+@mixin fc($f,$c){
+  font-size: $f  + px;
+  color    : $c;
+}
+@mixin dispFlexa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap:wrap
+}
+
+@mixin dispFlex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items:center;
+  flex-wrap:wrap
+}
+
+@mixin boxFlex {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+@mixin boxOrient($orient) {
+  -moz-box-orient: $orient;
+  -ms-box-orient: $orient;
+  -webkit-box-orient: $orient;
+  box-orient: $orient;
+}
+@mixin boxSizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin noBsizeBg($file) {
+  background-image: url(vurl($file));
+  background-repeat: no-repeat;
+}
+@mixin imgBg($file) {
+  background-image: url(vurl($file));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@mixin formTranslate($translate:(-50%,-50%)){
+  -webkit-transform: $translate;
+  -moz-transform: $translate;
+  -ms-transform: $translate;
+  -o-transform: $translate;
+  transform: $translate;
+}
+@mixin borderRadius($radius:5px) {
+  border-radius: $radius;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+@mixin lineNum($num) {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  -webkit-line-clamp:$num;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+}

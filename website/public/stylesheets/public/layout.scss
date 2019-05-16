@@ -1,0 +1,283 @@
+@charset "utf-8";
+
+//~ base code
+@import "../base/base";
+
+html,
+body {
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg_color {
+    background-color: $bodyBgColor;
+}
+
+
+
+// 当屏幕小于或等于1240px时
+@media screen and (max-width:1240px) {
+    main {
+        margin-top: 60px;
+    }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        line-height: 60px;
+        z-index: 9999;
+        border-bottom: 1px solid $lineColor;
+
+        .logo {
+            padding: 0 20px;
+
+            .navbar-logo {
+                height: 50px;
+            }
+        }
+        .login a {
+            @include fc(14, $basicColor);
+            font-weight: bold;
+            padding: 6px 18px;
+            border-radius: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -ms-border-radius: 30px;
+            -o-border-radius: 30px;
+            // background-color: $backgroundColor;
+        
+            &:hover {
+                color: #000000;
+            }
+        }
+    }
+
+    .topNav {
+        // margin: 0 auto;
+        @include dispFlex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+
+        li {
+            float: left;
+            margin-right: 20px;
+            a{
+                padding: 8px 20px;
+                font-size: 16px;
+                line-height: 16px;
+                border-radius: 18px;
+                color: #666;
+            }
+            &:hover a{
+                color: #000000;
+                background-color: #e0dce4;
+                box-shadow: 2px 2px 1px #c5c0cc inset;
+            }
+            &.active a{
+                color: #000000;
+                background-color: $backgroundColor;
+                box-shadow: 2px 2px 1px #c5c0cc inset;
+            }
+        }
+
+    }
+}
+
+// 当屏幕大于或等于指定宽度1240px时
+@media screen and (min-width:1240px) {
+    main {
+        margin-top: 80px;
+    }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        line-height: 80px;
+        z-index: 9999;
+        border-bottom: 1px solid $lineColor;
+
+        .logo {
+            padding: 0 20px;
+
+            .navbar-logo {
+                height: 60px;
+            }
+        }
+        .login a {
+            @include fc(18, $basicColor);
+            font-weight: bold;
+            padding: 6px 18px;
+            border-radius: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -ms-border-radius: 30px;
+            -o-border-radius: 30px;
+            // background-color: $backgroundColor;
+        
+            &:hover {
+                color: #000000;
+            }
+        }
+
+    }
+
+    .topNav {
+        // margin: 0 auto;
+        @include dispFlex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+
+        li {
+            float: left;
+            margin-right:40px;
+            a{
+                padding: 8px 20px;
+                font-size: 16px;
+                line-height: 16px;
+                border-radius: 18px;
+                color: #666;
+            }
+            &:hover a{
+                color: #000000;
+                background-color: #e0dce4;
+                box-shadow: 2px 2px 1px #c5c0cc inset;
+            }
+            &.active a{
+                color: #000000;
+                background-color: $backgroundColor;
+                box-shadow: 2px 2px 1px #c5c0cc inset;
+            }
+        }
+
+    }
+
+}
+
+
+
+
+// footer
+.footer {
+    width: 100%;
+    background-color: $basicTextColor;
+    padding: 26px 0;
+
+    .padd-lr__28 {
+        padding: 0 28px;
+    }
+
+    .navItem {
+        padding-bottom: 20px;
+
+        .navItem__it {
+            float: left;
+            margin-right: 30px;
+            padding-left: 0;
+
+            .keyWord {
+                @include fc(18, $lineColor);
+                font-weight: bold;
+            }
+
+            .link,
+            .nav {
+                @include fc(14, $lineColor);
+
+                &:hover {
+                    color: $backgroundColor;
+                }
+            }
+
+            a:hover {
+                color: $backgroundColor;
+            }
+        }
+
+        .navItem__it:last-child {
+            margin-right: 0px
+        }
+
+    }
+
+    .friendly-link {
+        @include fc(15, $lineColor);
+        font-weight: bold;
+    }
+
+    .company-Info {
+
+        .info {
+            margin-top: 12px;
+            float: left;
+
+            h4 {
+                @include fc(14, $grayColor);
+
+                &:hover {
+                    color: $backgroundColor;
+                }
+            }
+        }
+
+        .wxcode {
+            float: right;
+
+            .wxcode-item {
+                margin-left: 54px;
+                display: inline-block;
+                width: 120px;
+                height: 120px;
+                box-sizing: border-box;
+                padding: 3px;
+                background-color: $bodyBgColor;
+
+                img {
+                    width: 114px;
+                    height: 114px;
+                }
+
+                p {
+                    margin-top: 8px;
+                    text-align: center;
+                    @include fc(13, $grayColor);
+                }
+            }
+        }
+    }
+
+    .website-version {
+        margin-top: 26px;
+
+        h5 {
+            text-align: center;
+            line-height: 15px;
+            @include fc(13, $grayColor);
+        }
+
+        .h5 {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.img_banner {
+    width: 100%;
+}

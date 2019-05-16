@@ -1,0 +1,21 @@
+/*
+    关于我们公司简介
+**/
+.company-wrapper{
+    padding:px2rem(15);
+    padding-top: 0;
+    .company-introduce{
+        @include fontFlex(13);
+        color: #333333;
+        line-height: px2rem(22);
+        margin-bottom: px2rem(15);
+    }
+    .company-introduce:last-child{
+        margin-bottom:0;
+    }
+    .company-img{
+        margin-bottom: px2rem(15);
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,38 @@
+
+// 优质的售后服务模块样式
+.service-wrapper{
+    background-color: #ffffff;
+    .service-list{
+        margin:0 px2rem(15);
+        padding: px2rem(15) 0;
+        display: flex;
+        border-bottom: 1px solid $lineColor;
+        .service-icon{
+            width: px2rem(80);
+            height: px2rem(80);
+            align-self: flex-start;
+            margin-right: px2rem(12);
+            border-radius: 50%;
+            @include imgBg("brandlogo/default.png");
+        }
+    }
+    .service-list:last-child{
+        border-bottom: none;
+    }
+    .service-info{
+        flex: 1;
+    }
+    .service-title{
+        @include fontFlex(16);
+        color: #333333;
+        font-weight: bold;
+        margin-bottom: px2rem(5);
+    }
+    .service-desc{
+        @include fontFlex(14);
+        color: #333333;
+    }
+}
+.mar_b-none{
+    margin-bottom: 0 !important
+}

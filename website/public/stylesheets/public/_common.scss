@@ -1,0 +1,163 @@
+.clr:after {
+  display: block;
+  clear: both;
+  content: ' ';
+  height: 0;
+  overflow: hidden;
+}
+
+.fl {
+  // display: inline;
+  float: left;
+}
+
+.fr {
+  // display: inline;
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+.w1240 {
+  width: 1240px;
+  min-width: 1240px;
+  margin: 0 auto;
+}
+.w1000 {
+  width: 1000px;
+  min-width: 1000px;
+  margin: 0 auto;
+}
+.w1170 {
+  width: 1170px;
+  min-width: 1170px;
+  margin: 0 auto;
+}
+.w1120 {
+  width: 1120px;
+  margin: 0 auto;
+}
+
+.mar_tb-20 {
+  margin: 20px 0;
+}
+.mar_lr-20 {
+  margin:0 20px;
+}
+.mar_l-20 {
+  margin-left: 20px;
+}
+.mar_r-20 {
+  margin-right: 20px;
+}
+.mar_b-20 {
+  margin-bottom: 20px;
+}
+.img60x60{
+  @include wh(60,60);
+  display: inline-block;
+}
+.imgBox60x60{
+  @include wh(60,60);
+  margin: 0 10px;
+}
+.imgBox80x80{
+  @include wh(80,80);
+  margin: 36px 0 20px 0;
+}
+.img80x80{
+  @include wh(80,80);
+  display: inline-block;
+}
+.imgBox160x160 {
+  @include wh(160,160);
+}
+.img160x160{
+  @include wh(160,160)
+}
+.w100p{
+  width: 100%;
+}
+//文字*号
+.need-icon-before::before {
+  display: inline-block;
+  content: '*';
+  @include wh(9, 18);
+  @include fc(16, $redColor);
+  margin-left: rpx(5);
+}
+.need-icon-after::after {
+  display: inline-block;
+  content: '*';
+  @include wh(9, 18);
+  @include fc(16, $redColor);
+  margin-right: rpx(2)
+}
+.need-icon-w::after {
+  display: inline-block;
+  content: '*';
+  @include wh(9, 18);
+  @include fc(16, $bodyBgColor);
+  margin-right: rpx(2)
+}
+.fs13col777{
+  @include fc(13,#777777);
+}
+.placeholderStyle::-webkit-input-placeholder  {
+  color: red;
+}
+.placeholderStyle::-moz-input-placeholder {
+  color: red;
+}
+.placeholderStyle::-ms-input-placeholder {
+  color: red;
+}
+.input:hover{
+  box-shadow: 0 0 5px #2872E0;
+}
+
+/*toast弹出层*/
+.jq-toast{
+  z-index: 999;
+  position:fixed;
+  top:0px;
+  left:0;
+  width:100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.jq-toast .toast{
+  padding: 20px 30px;
+  max-width: 80%;
+  background-color: #20ce9c;
+  color: #FFF;
+  border-radius: 4px;
+  font-size: 22px;
+}
+.jq-toast .toastfail{
+  padding: 20px 30px;
+  max-width: 80%;
+  background-color: #dbdbdb;
+  color: red;
+  border-radius: 4px;
+  font-size: 22px;
+}

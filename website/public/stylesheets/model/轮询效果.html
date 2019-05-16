@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* thinkcss-CSS初始化模板-www.thinkcss.com */
+        body,
+        div,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            font-style: normal;
+            font: 12px/22px"\5B8B\4F53", Arial, Helvetica, sans-serif
+        }
+
+        /* \5B8B\4F53 代表 宋体，更多中文字体转 Unicode //www.thinkcss.com/jiqiao/325.shtml */
+        ol,
+        ul,
+        li {
+            list-style: none
+        }
+
+        img {
+            border: 0;
+            vertical-align: middle
+        }
+
+        .clr:after {
+            display: block;
+            clear: both;
+            content: ' ';
+            height: 0;
+            overflow: hidden;
+        }
+
+        body {
+            color: #000000;
+            background: #FFF;
+            text-align: center
+        }
+
+        #Marquee_x {
+            overflow: hidden;
+            width: 375px;
+        }
+
+        #Marquee_x ul {
+            background: #F7F7FA;
+        }
+
+        #Marquee_x ul li,
+        #Marquee_x ul li div {
+            float: left;
+            line-height: 25px;
+            overflow: hidden
+        }
+
+        #Marquee_x ul li {
+            /* width: 50%; */
+        }
+
+        /* 横向滚动必须让所有li左浮动 */
+        #Marquee_x ul li div {
+            background-color: #FFFFFF;
+            float: left;
+            margin: 0 5px;
+            line-height: 25px;
+            /* height: 125px; */
+            width: 160px;
+            overflow: hidden
+        }
+
+        #Marquee_x ul li div:first-child {
+            margin-left: 15px;
+        }
+
+        #Marquee_x ul li div:last-child {
+            margin-right: 0px;
+        }
+
+        #Marquee_x ul li div img {
+            border: 1px solid #DADADA;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            display: block;
+
+        }
+
+        #Marquee_x ul li div span {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 15px;
+            color: #333333;
+            text-align: center;
+            display: block;
+        }
+
+        #Marquee_x ul li div p {
+            font-size: 12px;
+            color: #333333;
+            letter-spacing: 0;
+            text-align: center;
+            display: block;
+        }
+    </style>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/marquee.js"></script>
+    <script>
+        $(function () {
+            $('#Marquee_x').jcMarquee({
+                'marquee': 'x',
+                'margin_right': '5px',
+                'speed': 20
+            });
+            // thinkcss提示：10px代表间距，第二个20代表滚动速度
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="Marquee_x">
+        <ul class="clr">
+            <li>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand14.png" />
+                    <span>thinkcss学习1</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </div>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_15.png" />
+                    <span>thinkcss学习3</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </div>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_13.png" />
+                    <span>thinkcss学习2</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </div>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_10.png" />
+                    <span>thinkcss学习5</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </div>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_12.png" />
+                    <span>thinkcss学习5</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </div>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_14.png" />
+                    <span>thinkcss学习5</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </div>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_16.png" />
+                    <span>thinkcss学习5</span>
+                    <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="roll-wrap clearfix" id="e">
+        <ul id="listBox" class="clearfix">
+            <li>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_15.png" />
+                </div>
+                <span>季寇</span>
+                <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+            </li>
+            <li>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand14.png" />
+                </div>
+                <span>古瓷</span>
+                <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+
+            </li>
+
+            <li>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_12.png" />
+                </div>
+                <span>畅轻宝宝</span>
+                <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+
+            </li>
+
+            <li>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_14.png" />
+                </div>
+                <span>客福利</span>
+                <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+
+            </li>
+
+            <li>
+                <div>
+                    <img src="//x.wxzs.co/xw/brandlogo/brand_16.png" />
+                </div>
+                <span>马萨嘎</span>
+                <p>关爱女性，呵护健康。不为自己的美丽留白的健康生活品牌。</p>
+            </li>
+
+        </ul>
+    </div>
+</body>
+
+</html>

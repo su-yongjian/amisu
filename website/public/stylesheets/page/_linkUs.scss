@@ -1,0 +1,128 @@
+.contact-swraper{
+    padding-bottom: 60px;
+    background-color: $bgColor;
+}
+.contactBox{
+    h2{
+        @include fc(24,$basicColor);
+        margin:24px 0 15px 0;
+    }
+    .companyInfoBox{
+        background-color: #ffffff;
+        border: 1px solid #EFEFF4;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        .info-left{
+           padding: 60px 40px ;
+           h1{
+            display: inline-block;
+            @include fc(28,$basicColor);
+            border-bottom: 1px solid $lineColor;
+            padding-bottom: 20px;
+           }
+           .company-link{
+                margin-top: 34px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+            }
+           .company-link-icon{
+                @include wh(24,24);
+                @include imgBg('lianxi.png');
+                -ms-flex-item-align: start;
+                    align-self: flex-start;
+                margin-right: 12px;
+                margin-top: 4px;
+            
+           }
+           .company-address{
+                margin-top: 30px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+           }
+           .company-address-icon{
+                @include wh(24,24);
+                @include imgBg('dizhi.png');
+                -ms-flex-item-align: start;
+                    align-self: flex-start;
+                margin-right: 12px;
+                margin-top: 4px;
+           }
+
+           p{
+                @include fc(16,$basicColor);
+                margin-bottom: 10px;
+            }
+        }
+        .info-right{
+            padding: 15px;
+        }
+    }
+    .onlineMessageBox{
+        padding: 30px 24px;
+        background-color: #ffffff;
+        .form-left{
+            width: 40%;
+            min-width: 380px;
+            padding-right: 40px;
+        }
+        .inputItemBox{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 20px 0;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+        .inputItemBox:last-child{
+            margin-bottom: 0;
+        }
+        .inp-border{
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            border: 1px solid #DBDBDB;
+            border-radius: 5px;
+            height: 40px;
+            line-height: 20px;
+            padding-left: 10px;
+            @include fc(15,#9b9b9b);
+        }
+        .form-right{
+            padding-top: 20px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            .need-icon-w{
+                -ms-flex-item-align: start;
+                    align-self: flex-start;
+            }
+        }
+        .title{
+            @include fc(15,$basicColor);
+            line-height: 20px;
+        }
+        
+        .textarea-border{
+            border: 1px solid #DBDBDB;
+            border-radius: 5px;
+            outline:none;
+            padding: 10px;
+            @include fc(15,#9b9b9b);
+            line-height: 20px;
+            height: 144px;
+            overflow-y: scroll;
+        }
+        .submitBtn{
+            @include wh(180,40);
+            @include fc(16,$basicColor);
+            background-color: #FAD232;
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-left: 54px;
+        }
+    }
+}

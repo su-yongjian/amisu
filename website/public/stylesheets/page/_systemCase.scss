@@ -1,0 +1,117 @@
+.case-swraper{
+    background-color: $bgColor;
+}
+.caseBox{
+    margin-top: 22px;
+    padding-bottom: 52px;
+    //perspective: 500;
+    .caseList{
+        position: relative;
+        width: 31%;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        overflow: hidden;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        //background-color: #ffffff;
+        //transform-style: preserve-3d;
+        .left-to-right-border{
+            background-color: #EFEFF5;
+        }
+
+        .right-to-bottom-border{
+            background-color: #EFEFF5
+        }
+        .bottom-to-left-border{
+            background-color: #EFEFF5
+        }
+        .bottom-to-start-border{
+            background-color: #EFEFF5
+        }
+
+        .case-info{
+            padding: 12px 16px 16px 10px;
+        }
+        
+        .case-title{
+            @include fc(18,$basicColor);
+            font-weight: bold;
+        }
+        .case-name{
+            font-size: 12px;
+            line-height: 20px;
+            margin-left: 8px;
+            border: 1px solid #323232;
+            border-radius: 2px;
+            padding: 0 6px;
+        }
+        .case-desc{
+            @include fc(14,$basicColor);
+            @include lineNum(2);
+        }
+    }
+    .caseList:nth-child(3n){
+        margin-right:0 ;
+    }
+    .caseList:hover {
+        background: #FFFFFF;
+        -webkit-transform: translateY(3px) scale(1.02);
+                transform: translateY(5px) scale(1.02);
+
+        .left-to-right-border{
+            width: 100%;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+        .right-to-bottom-border{
+            height: 100%;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+         .bottom-to-left-border{
+            width: 100%;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+         .bottom-to-start-border{
+            height: 100%;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -o-transition: 0.5s;
+        }
+
+    }
+    .cus-logoBox{
+        width: 100%;
+        height: 243px;
+        overflow: hidden;
+
+        &:hover{
+            //-webkit-transform: scale(1.02);
+            //transform: scale(1.02);
+            //border-radius:50%;
+            overflow: hidden;
+
+        }
+
+        .cus-logo{
+            width: 100%;
+            height: 243px;
+
+        }
+    }
+
+}

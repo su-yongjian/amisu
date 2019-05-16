@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mainBanner</title>
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+    <div class="swiperBox">
+        <div class="shutter-img">
+            <a href="#"> <img class="img_banner" src="../../images/shutter_1.jpg" alt=""></a>
+            <a href="#"> <img class="img_banner" src="../../images/shutter_2.jpg" alt=""></a>
+            <a href="#"> <img class="img_banner" src="../../images/shutter_3.jpg" alt=""></a>
+            <a href="#"> <img class="img_banner" src="../../images/shutter_4.jpg" alt=""></a>
+        </div>
+        <ul class="shutter-btn">
+            <li class="prev"></li>
+            <li class="next"></li>
+        </ul>
+    </div>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/velocity.js"></script>
+<script src="../../js/shutter.js"></script>
+<script>
+    $(function () {
+        $('.swiperBox').shutter({
+            // shutterW: 1240, // 容器宽度
+            // shutterH: 358, // 容器高度
+            isAutoPlay: true, // 是否自动播放
+            playInterval: 3000, // 自动播放时间
+            curDisplay: 1, // 当前显示页
+            fullPage: false // 是否全屏展示
+        });
+    })
+</script>
+
+</html>
