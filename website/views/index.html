@@ -9,13 +9,13 @@
     <meta name="apple-mobile-web-app-title" content="记账熊">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="baidu-site-verification" content="Sg5OX3O2tW"/>
-    <link rel="icon" href="./wp-static/images/bear.ico">
-    <link rel="shortcut icon" href="./wp-static/images/bear.ico"/>
-    <link rel="stylesheet" href="./wp-static/css/swiper-4.3.5.min.css">
-    <link rel="stylesheet" href="./wp-static/css/public/layout.css">
-    <link rel="stylesheet" href="./wp-static/css/main.css">
-    <script src="./wp-static/js/jquery.min.js"></script>
-    <script src="./wp-static/js/swiper-4.3.5.min.js"></script>
+    <link rel="icon" href="./images/bear.ico">
+    <link rel="shortcut icon" href="./images/bear.ico"/>
+    <link rel="stylesheet" href="./stylesheets/swiper-4.3.5.min.css">
+    <link rel="stylesheet" href="./stylesheets/public/layout.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <script src="./javascripts/jquery.min.js"></script>
+    <script src="./javascripts/swiper-4.3.5.min.js"></script>
     <script>
         $(function () {
             $("#home").addClass("active").siblings().removeClass('active');
@@ -24,407 +24,451 @@
 </head>
 
 <body>
-<!-- <header class="header bg_color">
-  <?php include ABSPATH.'wp-static/header.html'?>
-</header> -->
-
-<main class="main">
-    <div class="swiperBigBox">
-        <div class="swiperBox" id="swiperBox">
-            <div class="shutter-img">
-                <a class="clr" href="#"> <img class="img_banner swiperImg" src="//x.wxzs.co/xw/index-01.png" alt=""></a>
-                <a class="clr" href="#"> <img class="img_banner swiperImg" src="//x.wxzs.co/xw/index-2.png" alt=""></a>
-                <a class="clr" href="#"> <img class="img_banner swiperImg" src="//x.wxzs.co/xw/index-3.png" alt=""></a>
+    <header class="header bg_color">
+        <div class="w1170 flex">
+            <div class="fl logo">
+                <a class="navbar-brand" href="<?php echo $ABSPATH;?>/index_jzbull.php">
+                    <img class="navbar-logo" src="//x.wxzs.co/xw/pc-logo1.png" alt="记账熊LOGO">
+                </a>
             </div>
-            <ul class="shutter-btn">
-                <li class="prev"></li>
-                <li class="next"></li>
+            <ul id="headerTab" class="topNav navbar-nav clr ">
+                <li id="home"><a href="<?php echo $ABSPATH;?>/index_jzbull.php">首页</a></li>
+                <li id="product"><a href="<?php echo $ABSPATH;?>/wp-static/product.php">系统功能</a></li>
+                <li id="case"><a href="<?php echo $ABSPATH;?>/wp-static/case.php">系统案例</a></li>
+                <li id="about"><a href="<?php echo $ABSPATH;?>/wp-static/about.php">关于我们</a></li>
+                <li id="news"><a href="<?php echo $ABSPATH;?>/wp-static/news.php">新闻动态</a></li>
+                <li id="contact"><a href="<?php echo $ABSPATH;?>/wp-static/contact.php">联系我们</a></li>
             </ul>
+            <div class="fr login"><a href="https://pc.jzbull.com/login">登录</a></div>
         </div>
-    </div>
+    </header>
 
-
-    <div class="index-wrapper">
-        <div class="bigBg-img">
-            <h1 class="h1Style">微商管理遇到的问题</h1>
-            <div class="w1170">
-                <img class="img-issue" src="./wp-static/images/img-01.png" alt="">
-            </div>
-            <h1 class="h1Style">小程序管理系统优势</h1>
-            <div class="advantage-Box">
-                <div class="w1170 flexRow-wrap">
-                    <div class="itemBox">
-                        <div class="flexColunm">
-                            <div class="imgBox80x80">
-                                <img class="img80x80" src="https://x.wxzs.co/xw/gw01.png" alt="背靠微信社交，坐拥流量红利">
-                            </div>
-                            <p class="tit">背靠微信社交，坐拥流量红利</p>
-                            <p class="des">背靠得天独厚的社交环境，坐拥微信10亿流量红利。</p>
-                        </div>
-                        <div class="left-to-right-border"></div>
-                        <div class="right-to-bottom-border"></div>
-                        <div class="bottom-to-left-border"></div>
-                        <div class="bottom-to-start-border"></div>
-                    </div>
-                    <div class="itemBox  mar_lr-20">
-                        <div class="flexColunm">
-                            <div class="imgBox80x80">
-                                <img class="img80x80" src="https://x.wxzs.co/xw/gw02.png" alt="轻量应用，使用门槛低">
-                            </div>
-                            <p class="tit">轻量应用，使用门槛低</p>
-                            <p class="des">无须安装下载，一键登录，多个入口，助力代理团队裂变和出货。</p>
-                        </div>
-                        <div class="left-to-right-border"></div>
-                        <div class="right-to-bottom-border"></div>
-                        <div class="bottom-to-left-border"></div>
-                        <div class="bottom-to-start-border"></div>
-                    </div>
-
-                    <div class="itemBox">
-                        <div class="flexColunm">
-                            <div class="imgBox80x80">
-                                <img class="img80x80" src="https://x.wxzs.co/xw/gw03.png" alt="顶级防护，安全系数高">
-                            </div>
-                            <p class="tit">顶级防护，安全系数高</p>
-                            <p class="des">背靠腾讯云大数据防护，保护企业隐私防止客户信息泄露，数据安全系数高。</p>
-                        </div>
-                        <div class="left-to-right-border"></div>
-                        <div class="right-to-bottom-border"></div>
-                        <div class="bottom-to-left-border"></div>
-                        <div class="bottom-to-start-border"></div>
-                    </div>
-
-                    <div class="itemBox">
-                        <div class="flexColunm">
-                            <div class="imgBox80x80">
-                                <img class="img80x80" src="https://x.wxzs.co/xw/gw04.png" alt="与公众号关联，粉丝与代理同步转化">
-                            </div>
-                            <p class="tit">与公众号关联，粉丝与代理同步转化</p>
-                            <p class="des">与公众号打通，代理即粉丝，多维度触达代理和消费者，形成更加立体的社会化的营销体系。</p>
-                        </div>
-                        <div class="left-to-right-border"></div>
-                        <div class="right-to-bottom-border"></div>
-                        <div class="bottom-to-left-border"></div>
-                        <div class="bottom-to-start-border"></div>
-                    </div>
-
-                    <div class="itemBox mar_lr-20">
-                        <div class="flexColunm">
-                            <div class="imgBox80x80">
-                                <img class="img80x80" src="https://x.wxzs.co/xw/gw05.png" alt="更新迭代快，系统持续优化">
-                            </div>
-                            <p class="tit">更新迭代快，系统持续优化</p>
-                            <p class="des">与Web网页版、APP比，小程序更新迭代快，方便让系统保持最佳状态</p>
-                        </div>
-                        <div class="left-to-right-border"></div>
-                        <div class="right-to-bottom-border"></div>
-                        <div class="bottom-to-left-border"></div>
-                        <div class="bottom-to-start-border"></div>
-                    </div>
-                    <div class="itemBox">
-                        <div class="flexColunm">
-                            <div class="imgBox80x80">
-                                <img class="img80x80" src="https://x.wxzs.co/xw/gw06.png" alt="用户粘度高，动销让团队裂变快">
-                            </div>
-                            <p class="tit">用户粘度高，动销让团队裂变快</p>
-                            <p class="des">方便二次开发，连接促销工具，助力品牌方、代理团队利用“社交基因”，增加代理粘度和产品动销频次。</p>
-                        </div>
-                        <div class="left-to-right-border"></div>
-                        <div class="right-to-bottom-border"></div>
-                        <div class="bottom-to-left-border"></div>
-                        <div class="bottom-to-start-border"></div>
-                    </div>
+    <main class="main">
+        <div class="swiperBigBox">
+            <div class="swiperBox" id="swiperBox">
+                <div class="shutter-img">
+                    <a class="clr" href="#"> <img class="img_banner swiperImg" src="//x.wxzs.co/xw/index-01.png" alt=""></a>
+                    <a class="clr" href="#"> <img class="img_banner swiperImg" src="//x.wxzs.co/xw/index-2.png" alt=""></a>
+                    <a class="clr" href="#"> <img class="img_banner swiperImg" src="//x.wxzs.co/xw/index-3.png" alt=""></a>
                 </div>
+                <ul class="shutter-btn">
+                    <li class="prev"></li>
+                    <li class="next"></li>
+                </ul>
             </div>
         </div>
 
 
-        <h1 class="h1Style h1Style-a">记账熊功能简介</h1>
-        <h3 class="wechat-inc">小程序 <span class="wechat-icon"></span> 大系统</h3>
-        <div class="fn-wrapper w1170">
-            <p class="fn-sys-dsc">记账熊是一款专门为企业品牌方管理运营微商项目而设计的小程序应用。记账熊微商管理系统小程序能匹配多种微商模式，满足主流的微商制度，让微商品牌方实现高效管人、管货、管钱，通过系统化、信息化的管理，提升团队运营管理效率，打造企业社交零售平台。</p>
-            <p class="fn-sys-dsc">系统从人、货、钱和工具4个维度出发，设计了代理授权、代理审核、代理网络、客户管理、公告发布等代理管理模块；开单销售、订单处理、批量发货、商品维护、收单宝、云+本地仓系统、物流跟踪等订单管理模块；数据统计、奖金制度、预存提现等统计及分润模块；小商城、门店地图、素材中心、赠品动销、优惠商品等营销工具箱。另外，系统提供多项目管理、多角色协同、 PC端批量处理等辅助功能，系统涉及整体60余个功能模块。</p>
-            <p class="fn-sys-dsc fn-sys-dsc-pdd_tb">记账熊为企业品牌方提供平台SaaS+独立定制多种解决方案，持续更新迭代，助力企业在社交媒体中迅速构建社会化营销体系。</p>
-            <div class="fn-wrapper__item">
-                <div class="flexColunm">
-                    <div class="itemRow">
-                        <span class="item-r">管人</span>
-                        <img class="item-l" src="./wp-static//images/ren.png" alt="管人">
-                    </div>
-                    <ul>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">代理层级设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">代理进货价设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">代理货款充值设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">查看直属代理</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">查看所有代理</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">新增授权代理</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">代理授权升级审核</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">代理层级网络</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">同级推荐网络</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">团队公告发布</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">客户管理</span>
-                        </li>
-                    </ul>
+        <div class="index-wrapper">
+            <div class="bigBg-img">
+                <h1 class="h1Style">微商管理遇到的问题</h1>
+                <div class="w1170">
+                    <img class="img-issue" src="./images/img-01.png" alt="">
                 </div>
-                <div class="flexColunm">
-                    <div class="itemRow">
-                        <span class="item-r">管货</span>
-                        <img class="item-l" src="./wp-static//images/huo.png" alt="管货">
-                    </div>
-                    <ul>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">发货模式设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">最低进货量设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">云库存设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">下单付款方式设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">销售录单记账</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">向上级下单给客户</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">处理下级/客户订单</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">订单批量发货</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">商品及库存管理</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">在线向上级订货</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flexColunm">
-                    <div class="itemRow">
-                        <span class="item-r">管钱</span>
-                        <img class="item-l" src="./wp-static//images/qian.png" alt="管钱">
-                    </div>
-                    <ul>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">加盟推荐奖励设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">同级推荐奖励设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">团队业绩返点奖设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">奖金提现设置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">查看奖金收入与支出</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">预存货款余额明细</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">奖金提现审核</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">团队资金余额</span>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="flexColunm">
-                    <div class="itemRow">
-                        <span class="item-r">工具箱</span>
-                        <img class="item-l" src="./wp-static//images/gongju.png" alt="工具箱">
-                    </div>
-                    <ul>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">小商城</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">收单宝</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">赠品动销配置</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">门店地图导航</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">素材中心</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">企业官网</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">资料上传</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">代理福利</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">授权证书</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">优惠商品</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">礼包加盟</span>
-                        </li>
-                        <li>
-                            <span class="select"><em class="gougou"></em></span>
-                            <span class="title">更多工具敬请期待</span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h1 class="h1Style">客户案例</h1>
-        <!-- Swiper -->
-        <div class="out-container">
-            <div class="in-container ">
-                <div id="swiper-wrapper" class="swiper-wrapper">
-                    <?php 
-                      include ABSPATH.'/wp-static/mock/partnerdata.php';
-                      foreach($partnerdata as $v){
-                    ?>      
-                    
-                    <div class="swiper-slide">
-                        <div class="flexColunm">
-                            <div class="logoBox">
-                                <img class="com-logo" src="<?php echo $v['img'];?>" alt="">
+                <h1 class="h1Style">小程序管理系统优势</h1>
+                <div class="advantage-Box">
+                    <div class="w1170 flexRow-wrap">
+                        <div class="itemBox">
+                            <div class="flexColunm">
+                                <div class="imgBox80x80">
+                                    <img class="img80x80" src="https://x.wxzs.co/xw/gw01.png" alt="背靠微信社交，坐拥流量红利">
+                                </div>
+                                <p class="tit">背靠微信社交，坐拥流量红利</p>
+                                <p class="des">背靠得天独厚的社交环境，坐拥微信10亿流量红利。</p>
                             </div>
-                            <div class="com-info">
-                                <h3 class="com-title"><?php echo $v['title'];?></h3>
-                                <p class="com-dse"><?php echo $v['desc'];?></p>
+                            <div class="left-to-right-border"></div>
+                            <div class="right-to-bottom-border"></div>
+                            <div class="bottom-to-left-border"></div>
+                            <div class="bottom-to-start-border"></div>
+                        </div>
+                        <div class="itemBox  mar_lr-20">
+                            <div class="flexColunm">
+                                <div class="imgBox80x80">
+                                    <img class="img80x80" src="https://x.wxzs.co/xw/gw02.png" alt="轻量应用，使用门槛低">
+                                </div>
+                                <p class="tit">轻量应用，使用门槛低</p>
+                                <p class="des">无须安装下载，一键登录，多个入口，助力代理团队裂变和出货。</p>
                             </div>
+                            <div class="left-to-right-border"></div>
+                            <div class="right-to-bottom-border"></div>
+                            <div class="bottom-to-left-border"></div>
+                            <div class="bottom-to-start-border"></div>
+                        </div>
+
+                        <div class="itemBox">
+                            <div class="flexColunm">
+                                <div class="imgBox80x80">
+                                    <img class="img80x80" src="https://x.wxzs.co/xw/gw03.png" alt="顶级防护，安全系数高">
+                                </div>
+                                <p class="tit">顶级防护，安全系数高</p>
+                                <p class="des">背靠腾讯云大数据防护，保护企业隐私防止客户信息泄露，数据安全系数高。</p>
+                            </div>
+                            <div class="left-to-right-border"></div>
+                            <div class="right-to-bottom-border"></div>
+                            <div class="bottom-to-left-border"></div>
+                            <div class="bottom-to-start-border"></div>
+                        </div>
+
+                        <div class="itemBox">
+                            <div class="flexColunm">
+                                <div class="imgBox80x80">
+                                    <img class="img80x80" src="https://x.wxzs.co/xw/gw04.png" alt="与公众号关联，粉丝与代理同步转化">
+                                </div>
+                                <p class="tit">与公众号关联，粉丝与代理同步转化</p>
+                                <p class="des">与公众号打通，代理即粉丝，多维度触达代理和消费者，形成更加立体的社会化的营销体系。</p>
+                            </div>
+                            <div class="left-to-right-border"></div>
+                            <div class="right-to-bottom-border"></div>
+                            <div class="bottom-to-left-border"></div>
+                            <div class="bottom-to-start-border"></div>
+                        </div>
+
+                        <div class="itemBox mar_lr-20">
+                            <div class="flexColunm">
+                                <div class="imgBox80x80">
+                                    <img class="img80x80" src="https://x.wxzs.co/xw/gw05.png" alt="更新迭代快，系统持续优化">
+                                </div>
+                                <p class="tit">更新迭代快，系统持续优化</p>
+                                <p class="des">与Web网页版、APP比，小程序更新迭代快，方便让系统保持最佳状态</p>
+                            </div>
+                            <div class="left-to-right-border"></div>
+                            <div class="right-to-bottom-border"></div>
+                            <div class="bottom-to-left-border"></div>
+                            <div class="bottom-to-start-border"></div>
+                        </div>
+                        <div class="itemBox">
+                            <div class="flexColunm">
+                                <div class="imgBox80x80">
+                                    <img class="img80x80" src="https://x.wxzs.co/xw/gw06.png" alt="用户粘度高，动销让团队裂变快">
+                                </div>
+                                <p class="tit">用户粘度高，动销让团队裂变快</p>
+                                <p class="des">方便二次开发，连接促销工具，助力品牌方、代理团队利用“社交基因”，增加代理粘度和产品动销频次。</p>
+                            </div>
+                            <div class="left-to-right-border"></div>
+                            <div class="right-to-bottom-border"></div>
+                            <div class="bottom-to-left-border"></div>
+                            <div class="bottom-to-start-border"></div>
                         </div>
                     </div>
-                    <?php } ?>
                 </div>
-                <div class="swiper-button-next" style="width:40px;height:40px;background-size: 40px 40px"></div>
-                <div class="swiper-button-prev" style="width:40px;height:40px;background-size: 40px 40px;"></div>
             </div>
-        </div>
 
-        <h1 class="h1Style">最新资讯</h1>
-        <div class="news-wrapper itemRow w1170">
-            <div class="item-l item-l-hover">
-                <img class="news-logo"
-                     src="http://x.wxzs.co/xw/brandlogo/default2.png"
-                     alt="">
-                       <div class="news-mask"></div>
+
+            <h1 class="h1Style h1Style-a">记账熊功能简介</h1>
+            <h3 class="wechat-inc">小程序 <span class="wechat-icon"></span> 大系统</h3>
+            <div class="fn-wrapper w1170">
+                <p class="fn-sys-dsc">记账熊是一款专门为企业品牌方管理运营微商项目而设计的小程序应用。记账熊微商管理系统小程序能匹配多种微商模式，满足主流的微商制度，让微商品牌方实现高效管人、管货、管钱，通过系统化、信息化的管理，提升团队运营管理效率，打造企业社交零售平台。</p>
+                <p class="fn-sys-dsc">系统从人、货、钱和工具4个维度出发，设计了代理授权、代理审核、代理网络、客户管理、公告发布等代理管理模块；开单销售、订单处理、批量发货、商品维护、收单宝、云+本地仓系统、物流跟踪等订单管理模块；数据统计、奖金制度、预存提现等统计及分润模块；小商城、门店地图、素材中心、赠品动销、优惠商品等营销工具箱。另外，系统提供多项目管理、多角色协同、 PC端批量处理等辅助功能，系统涉及整体60余个功能模块。</p>
+                <p class="fn-sys-dsc fn-sys-dsc-pdd_tb">记账熊为企业品牌方提供平台SaaS+独立定制多种解决方案，持续更新迭代，助力企业在社交媒体中迅速构建社会化营销体系。</p>
+                <div class="fn-wrapper__item">
+                    <div class="flexColunm">
+                        <div class="itemRow">
+                            <span class="item-r">管人</span>
+                            <img class="item-l" src="./images/ren.png" alt="管人">
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">代理层级设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">代理进货价设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">代理货款充值设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">查看直属代理</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">查看所有代理</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">新增授权代理</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">代理授权升级审核</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">代理层级网络</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">同级推荐网络</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">团队公告发布</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">客户管理</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flexColunm">
+                        <div class="itemRow">
+                            <span class="item-r">管货</span>
+                            <img class="item-l" src="./images/huo.png" alt="管货">
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">发货模式设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">最低进货量设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">云库存设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">下单付款方式设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">销售录单记账</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">向上级下单给客户</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">处理下级/客户订单</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">订单批量发货</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">商品及库存管理</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">在线向上级订货</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flexColunm">
+                        <div class="itemRow">
+                            <span class="item-r">管钱</span>
+                            <img class="item-l" src="./images/qian.png" alt="管钱">
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">加盟推荐奖励设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">同级推荐奖励设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">团队业绩返点奖设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">奖金提现设置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">查看奖金收入与支出</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">预存货款余额明细</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">奖金提现审核</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">团队资金余额</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="flexColunm">
+                        <div class="itemRow">
+                            <span class="item-r">工具箱</span>
+                            <img class="item-l" src="./images/gongju.png" alt="工具箱">
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">小商城</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">收单宝</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">赠品动销配置</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">门店地图导航</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">素材中心</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">企业官网</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">资料上传</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">代理福利</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">授权证书</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">优惠商品</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">礼包加盟</span>
+                            </li>
+                            <li>
+                                <span class="select"><em class="gougou"></em></span>
+                                <span class="title">更多工具敬请期待</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="item-r">
 
-                <nav>
-                    <ul class="clr" id="navTab">
-                      <?php foreach ($term_all_list as $key => $item) {?>
-                          <li <?php if($key==0)echo 'class="active"'; ?> data-attr="jzb" data-id="<?php echo $key; ?>"><a href="#section-linebox-5">
-                      <span>
-                      <?php echo $item['name']; ?>
-                      </span></a></li>
-                      <?php } ?>
-                    </ul>
-                    <a class="more" href="./wp-static/news.php">更多 <span class="icon-right"></span></a>
-                </nav>
+            <h1 class="h1Style">客户案例</h1>
+            <!-- Swiper -->
+            <div class="out-container">
+                <div class="in-container ">
+                    <div id="swiper-wrapper" class="swiper-wrapper"></div>
+                    <div class="swiper-button-next" style="width:40px;height:40px;background-size: 40px 40px"></div>
+                    <div class="swiper-button-prev" style="width:40px;height:40px;background-size: 40px 40px;"></div>
+                </div>
+            </div>
 
-              <?php foreach ($term_all_list as $key => $item) {
-                   if($key==0){
-                       $show_hide = 'block';
-                   }else{
-                       $show_hide = 'none';
-                   }
-                  ?>
-                  <!-- 记账熊动态 -->
-                  <ul class="clr item-list active category_<?php echo $key; ?>" id="jzbList" style="display:<?php echo $show_hide;?> ">
-                    <?php foreach ($item['news_list'] as $article) { ?>
+            <h1 class="h1Style">最新资讯</h1>
+            <div class="news-wrapper itemRow w1170">
+                <div class="item-l item-l-hover">
+                    <img class="news-logo"
+                        src="http://x.wxzs.co/xw/brandlogo/default2.png"
+                        alt="">
+                        <div class="news-mask"></div>
+                </div>
+                <div class="item-r">
+
+                    <nav>
+                        <ul class="clr" id="navTab">
+                            <li class="active" data-attr="jzb" data-id="1"><a href="#section-linebox-5"><span>欢迎莅临</span></a></li>
+                            <li class="" data-attr="kg" data-id="2"><a href="#section-linebox-5"><span>客观满走</span></a></li>
+                        </ul>
+                        <a class="more" href="./">更多 <span class="icon-right"></span></a>
+                    </nav>
+
+                    <!-- 记账熊动态 -->
+                    <ul class="clr item-list active category_1" id="jzbList">
                         <li>
-                            <a href="/wp-static/newsinfo.php?id=<?php echo $article['ID']; ?>" class="itemRow">
-                                <span class="item-r"><?php echo new_mb_substr($article['post_title'],25,'utf-8'); ?></span>
-                                <span class="item-l"><?php echo substr($article['post_date'],0,10); ?></span>
+                            <a href="/newsinfo.php?id=1>" class="itemRow">
+                                <span class="item-r">束带结发来看水电费</span>
+                                <span class="item-l">2010-06-18</span>
                             </a>
                         </li>
-                    <?php } ?>
-                  </ul>
-              <?php } ?>
+                    </ul>
+                    
+                </div>
             </div>
         </div>
-    </div>
-</main>
-<?php include ABSPATH.'wp-static/footer.html'?>
+    </main>
+    <footer class="footer">
+        <div class="w1170">
+            <div class="padd-lr__28">
+                <ul class="navItem clr cl-effect-5">
+                    <li class="navItem__it"><a class="keyWord" href="javascript:void(0)" data-hover="微商管理系统开发">微商管理系统开发</a></li>
+                    <li class="navItem__it"><a class="keyWord" href="javascript:void(0)" data-hover="分销系统开发">分销系统开发</a></li>
+                    <li class="navItem__it"><a class="keyWord" href="javascript:void(0)" data-hover="微分销系统">微分销系统</a></li>
+                    <li class="navItem__it"><a class="keyWord" href="javascript:void(0)" data-hover="微分销平台">微分销平台</a></li>
+                    <li class="navItem__it"><a class="keyWord" href="javascript:void(0)" data-hover="微信营销管理系统">微信营销管理系统</a></li>
+                    <li class="navItem__it nav"><a class="keyWord" href="javascript:void(0)" data-hover="微信商城系统">微信商城系统</a></li>
+                </ul>
+                <div class="friendly-link">友情链接：</div>
+                <ul class="navItem clr">
+                    <li class="navItem__it"><a class="link" href="https://mp.weixin.qq.com/" data-hover="微信公众平台">微信公众平台</a></li>
+                    <li class="navItem__it"><a class="link" href="https://pay.weixin.qq.com/" data-hover="微信支付平台">微信支付平台</a></li>
+                    <li class="navItem__it"><a class="link" href="javascript:void(0)" data-hover="微信开放平台">微分销系统</a></li>
+                    <li class="navItem__it"><a class="link" href="https://mp.weixin.qq.com/" data-hover="微信小程序">微信小程序</a></li>
+                    <li class="navItem__it"><a class="link" href="https://weibo.com/jzbull" target="_blank" data-hover="记账熊微博">记账熊微博</a></li>
+                </ul>
+                <div class="line"></div>
+                <div class="mar_tb-20">
+                    <ul class="navItem clr">
+                        <li class="navItem__it"><a class="nav" href="<?php echo $ABSPATH;?>/index_jzbull.php" data-hover="首页">首页</a></li>
+                        <li class="navItem__it"><a class="nav" href="<?php echo $ABSPATH;?>/wp-static/product.php" data-hover="系统功能">系统功能</a></li>
+                        <li class="navItem__it"><a class="nav" href="<?php echo $ABSPATH;?>/wp-static/case.php" data-hover="系统案例">系统案例</a></li>
+                        <li class="navItem__it"><a class="nav" href="<?php echo $ABSPATH;?>/wp-static/about.php" data-hover="关于我们">关于我们</a></li>
+                        <li class="navItem__it"><a class="nav" href="<?php echo $ABSPATH;?>/wp-static/news.php" data-hover="新闻动态">新闻动态</a></li>
+                        <li class="navItem__it"><a class="nav" href="<?php echo $ABSPATH;?>/wp-static/contact.php" data-hover="联系我们">联系我们</a></li>
+                    </ul>
+                    <div class="company-Info clr">
+                        <div class="info">
+                            <h4>公司电话：0755-86705681</h4>
+                            <h4>服务热线：13798473631</h4>
+                            <h4>总部：广东省深圳市南山区丽山路桑泰大厦A座307</h4>
+                            <h4>分部：广州市天河区瘦狗岭路411号颐和大厦A1-2507</h4>
+                        </div>
+                        <div class="wxcode">
+                            <div class="wxcode-item">
+                                <img src="./images/wx_ewm.jpg" alt="客服微信">
+                                <p>客服微信</p>
+                            </div>
+                            <div class="wxcode-item">
+                                <img src="./images/wx_ewm.jpg" alt="系统顾问">
+                                <p>系统顾问</p>
+                            </div>
+                            <div class="wxcode-item">
+                                <img src="./images/zs_ewm.jpg" alt="打赏">
+                                <p>打赏</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="website-version">
+                    <h5 class="h5">Copyright @ 深圳市晓微科技有限公司 All Rights Reserved</h5>
+                    <h5>粤ICP备18059711号-1</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
-<script src="./wp-static/js/velocity.js"></script>
-<script src="./wp-static/js/shutter.js"></script>
+<script src="./javascripts/velocity.js"></script>
+<script src="./javascripts/shutter.js"></script>
+<script src="./javascripts/mobile/jquery.lazyload.min.js"></script>
 <script>
     $(function () {
         $('.swiperBox').shutter({
@@ -435,27 +479,59 @@
             curDisplay: 1, // 当前显示页
             fullPage: false // 是否全屏展示
         });
-    })
-    var swiper = new Swiper('.in-container', {
-        slidesPerView: 5,
-        spaceBetween: 10,
-        slidesPerGroup: 5,
-        preloadImages: false,
-        loop: true,
-        speed:1500,
-        autoplay: {
-            delay: 3000,//3秒切换一次
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
 
+        $.ajax({
+            type: "get",
+            url: "../mock/partnerdata.json",
+            async: false,
+            dataType: "json",
+            success: function (res) {
+                let str = "";
+                $.each(res, function (idx, obj) {
+                    str += `
+                    <div class="swiper-slide">
+                        <div class="flexColunm">
+                            <div class="logoBox">
+                                <img class="com-logo" src="${obj.img}" alt="">
+                            </div>
+                            <div class="com-info">
+                                <h3 class="com-title">${obj.title}</h3>
+                                <p class="com-dse">${obj.desc}</p>
+                            </div>
+                        </div>
+                    </div>
+                   `
+                })
+                $("#swiper-wrapper").empty().append(str);
+
+                $("img.com-logo").lazyload({
+                    effect: "fadeIn",
+                    threshold: 200,
+                    placeholder: "http://x.wxzs.co/xw/brandlogo/default.png"
+                });
+
+                var swiper = new Swiper('.in-container', {
+                    slidesPerView: 5,
+                    spaceBetween: 10,
+                    slidesPerGroup: 5,
+                    preloadImages: false,
+                    loop: true,
+                    speed:1500,
+                    autoplay: {
+                        delay: 3000,//3秒切换一次
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            }
+        })
+    })
     $("#navTab").on('click', 'li', function () {
         $(this).siblings().removeClass("active");
         $(this).addClass("active");
@@ -470,8 +546,9 @@
         let ca_num = $(this).attr('data-id');
         $('.item-list').hide();
         $('.category_'+ca_num).show();
-
     })
+
+
 </script>
 
 </html>
