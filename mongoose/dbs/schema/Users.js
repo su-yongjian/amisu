@@ -2,22 +2,20 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-let objectId = Schema.Types.objectId;
+let ObjectId = Schema.Types.ObjectId;
 
 const userSchema = new Schema({
-  UserId : objectId,
+  UserId : {type:ObjectId},
   userName:{unique:true,type:String},
   password:String,
+  gender:Number,
   createAt:{type:Date,default:Date.now()},
   lastLoginAt:{type:Date,default:Date.now()}
 },{collection:'users'})
 
-
-
-
-
-
-
+const model = {
+  Users:mongoose.model('Users',userSchema)
+}
 
 // 发布模型
-mongoose.model('Users',userSchema)
+module.exports = model
