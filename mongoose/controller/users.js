@@ -8,6 +8,7 @@ router.prefix('/user')
 router.get('/addUser',async (ctx)=>{
   let code = 0 // 状态码
   let msg = '' // 返回内容
+  // 模拟插入数据
   let doc = {
     userName:'王五3',
     password:'123456',
