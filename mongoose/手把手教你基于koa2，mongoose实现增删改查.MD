@@ -157,13 +157,17 @@ module.exports = model
 + #####  新建controller文件夹，主要是用来处理一些业务逻辑，新建users.js文件
 
 ````
-const Users = require('../dbs/schema/Users.js').Users  //导入schema表
+const tools = require('./tools.js')
 
 const Router = require('koa-router') ;
 
 let router = new Router()
 router.prefix('/user')
 
+/**
+ * 
+ * 新增用户
+ */
 router.get('/addUser',async (ctx)=>{
   let code = 0 // 状态码
   let msg = '' // 返回内容
@@ -190,9 +194,70 @@ router.get('/addUser',async (ctx)=>{
   return msg
 })
 
+/**
+ * 使用用户ID
+ * @UserId string
+ */
+router.get('/editUser',async (ctx)=>{
+  let code = 0 // 状态码
+  let msg = '' // 返回内容
+  // 模拟插入数据,实际冲ctx上下文中获取
+  let doc = {
+    UserId:'5cef5550bcd27b41f05df767'
+  }
+  try {
+    let ret = await Users.findOne(doc)
+    code = 0
+    msg = '保存成功, ' + ret
+  } catch (error) {
+    code = -1
+    msg = '保存失败, ' + error
+    console.log(error)
+  }
+
+  ctx.body = {
+    code,
+    msg
+  }
+  return msg
+})
+
 
 module.exports = router
 ````
+
++ ##### 在当前目录下新建增删改查工具方法，tools.js
+
+````javascript
+'use strict';
+let mongoose = require('mongoose')
+let Users = require('../dbs/schema/Users.js').Users  //导入schema表
+// 查找所有用户
+exports.findAllUsers = async ()=>{
+    let query = Users.find();
+    let res = []
+    await query.exec((err,data)=>{
+        if(err) throw(err)
+        res = data
+    })
+    return res
+}
+// 查找单个用户
+exports.findOneUser = async (params)=>{
+    // 格式 userID = 'xxxxx'
+    let query = Users.find({
+        _id = params.id
+    })
+    let res = [] ;
+    await query.exec((err,data)=>{
+        if(err) throw(err)
+        res=data
+    })
+    return res
+}
+````
+
+
 
 + #### 运行代码：配置package.json，scripts新增"dev": "nodemon node ./app.js"
 

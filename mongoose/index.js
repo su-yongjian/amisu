@@ -22,9 +22,7 @@ render(app, {
   await connect()
 })()
 
-const userRouter = require('./controller/users.js')
-app.use(userRouter.routes(),userRouter.allowedMethods())
-// app.use(router.routes(),router.allowedMethods())
+
 
 app
   .use(bodyParser({enableTypes:['json', 'form', 'text']}))
@@ -32,6 +30,9 @@ app
   .use(views(__dirname + '/views', {
     extension: 'html'
   }))
+
+const userRouter = require('./controller/users.js')
+app.use(userRouter.routes(),userRouter.allowedMethods())
 
 app.listen(4000,()=>{
   console.log('listen at port localhost:4000 ');
