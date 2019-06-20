@@ -1,0 +1,15 @@
+2019-06-19 17:14:00,872 INFO 34220 [Timer] f:\amisu\EggJs\node_modules\_egg-multipart@2.7.1@egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 40559134ms at 2019-06-20 04:30:00.006
+2019-06-19 17:14:00,872 INFO 34220 [Timer] f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\clean_log.js next time will execute after 24359128ms at 2019-06-20 00:00:00.000
+2019-06-19 17:14:00,873 INFO 34220 [Timer] f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 24360127ms at 2019-06-20 00:00:01.000
+2019-06-19 17:14:00,644 INFO 33176 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-multipart@2.7.1@egg-multipart\app\schedule\clean_tmpdir.js
+2019-06-19 17:14:00,644 INFO 33176 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\clean_log.js
+2019-06-19 17:14:00,644 INFO 33176 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\rotate_by_file.js
+2019-06-19 17:17:26,699 INFO 35168 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-multipart@2.7.1@egg-multipart\app\schedule\clean_tmpdir.js
+2019-06-19 17:17:26,700 INFO 35168 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\clean_log.js
+2019-06-19 17:17:26,700 INFO 35168 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\rotate_by_file.js
+2019-06-19 17:18:24,582 INFO 36340 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-multipart@2.7.1@egg-multipart\app\schedule\clean_tmpdir.js
+2019-06-19 17:18:24,582 INFO 36340 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\clean_log.js
+2019-06-19 17:18:24,582 INFO 36340 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\rotate_by_file.js
+2019-06-19 17:18:43,966 INFO 36808 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-multipart@2.7.1@egg-multipart\app\schedule\clean_tmpdir.js
+2019-06-19 17:18:43,966 INFO 36808 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\clean_log.js
+2019-06-19 17:18:43,966 INFO 36808 [egg-schedule]: register schedule f:\amisu\EggJs\node_modules\_egg-logrotator@3.1.0@egg-logrotator\app\schedule\rotate_by_file.js

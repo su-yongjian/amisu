@@ -1,0 +1,287 @@
+{
+  "keys": "f:\\amisu\\EggJs\\config\\config.default.js",
+  "middleware": "f:\\amisu\\EggJs\\config\\config.default.js",
+  "session": {
+    "maxAge": "f:\\amisu\\EggJs\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js",
+    "key": "f:\\amisu\\EggJs\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js",
+    "httpOnly": "f:\\amisu\\EggJs\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js",
+    "encrypt": "f:\\amisu\\EggJs\\node_modules\\_egg-session@3.1.0@egg-session\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+    "protocolWhiteList": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+    "defaultMiddleware": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "useSession": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "ignoreJSON": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "cookieName": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "sessionName": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "headerName": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "bodyName": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "queryName": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "value": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.local.js",
+      "maxAge": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "includeSubdomains": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "value": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "value": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "policy": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js",
+      "checkAddress": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "f:\\amisu\\EggJs\\node_modules\\_egg-security@2.5.0@egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "f:\\amisu\\EggJs\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js",
+    "callback": "f:\\amisu\\EggJs\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js",
+    "csrf": "f:\\amisu\\EggJs\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "f:\\amisu\\EggJs\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "f:\\amisu\\EggJs\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js",
+    "templatePath": "f:\\amisu\\EggJs\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "f:\\amisu\\EggJs\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "dirs": "f:\\amisu\\EggJs\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "queryField": "f:\\amisu\\EggJs\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieField": "f:\\amisu\\EggJs\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieDomain": "f:\\amisu\\EggJs\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "f:\\amisu\\EggJs\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "f:\\amisu\\EggJs\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\config\\config.local.js",
+    "eventSources": {
+      "default": "f:\\amisu\\EggJs\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\config\\config.default.js",
+      "development": "f:\\amisu\\EggJs\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\config\\config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "f:\\amisu\\EggJs\\node_modules\\_egg-schedule@3.6.3@egg-schedule\\config\\config.default.js",
+      "file": "f:\\amisu\\EggJs\\node_modules\\_egg-schedule@3.6.3@egg-schedule\\config\\config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "f:\\amisu\\EggJs\\node_modules\\_egg-schedule@3.6.3@egg-schedule\\config\\config.default.js"
+  },
+  "multipart": {
+    "mode": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "autoFields": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "defaultCharset": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "fieldSize": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "fields": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "fileSize": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "files": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "fileExtensions": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "whitelist": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "tmpdir": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js",
+    "cleanSchedule": {
+      "cron": "f:\\amisu\\EggJs\\node_modules\\_egg-multipart@2.7.1@egg-multipart\\config\\config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "f:\\amisu\\EggJs\\node_modules\\_egg-development@2.4.3@egg-development\\config\\config.default.js",
+    "ignoreDirs": "f:\\amisu\\EggJs\\node_modules\\_egg-development@2.4.3@egg-development\\config\\config.default.js",
+    "fastReady": "f:\\amisu\\EggJs\\node_modules\\_egg-development@2.4.3@egg-development\\config\\config.default.js",
+    "reloadOnDebug": "f:\\amisu\\EggJs\\node_modules\\_egg-development@2.4.3@egg-development\\config\\config.default.js",
+    "overrideDefault": "f:\\amisu\\EggJs\\node_modules\\_egg-development@2.4.3@egg-development\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "f:\\amisu\\EggJs\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "f:\\amisu\\EggJs\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "f:\\amisu\\EggJs\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "f:\\amisu\\EggJs\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxFiles": "f:\\amisu\\EggJs\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "f:\\amisu\\EggJs\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxDays": "f:\\amisu\\EggJs\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "f:\\amisu\\EggJs\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "dir": "f:\\amisu\\EggJs\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "dynamic": "f:\\amisu\\EggJs\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "preload": "f:\\amisu\\EggJs\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "buffer": "f:\\amisu\\EggJs\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "maxFiles": "f:\\amisu\\EggJs\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js"
+  },
+  "view": {
+    "root": "f:\\amisu\\EggJs\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "cache": "f:\\amisu\\EggJs\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.local.js",
+    "defaultExtension": "f:\\amisu\\EggJs\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "defaultViewEngine": "f:\\amisu\\EggJs\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "mapping": "f:\\amisu\\EggJs\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js"
+  },
+  "env": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "name": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "proxy": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "maxProxyCount": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "protocolHeaders": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "ipHeaders": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "hostHeaders": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "pkg": {
+    "name": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "version": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "description": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "private": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "egg": {
+      "declarations": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "dependencies": {
+      "egg": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "egg-scripts": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "devDependencies": {
+      "autod": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "autod-egg": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "egg-bin": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "egg-ci": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "egg-mock": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "eslint": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "eslint-config-egg": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "engines": {
+      "node": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "scripts": {
+      "start": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "stop": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "dev": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "debug": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "test": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "test-local": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "cov": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "lint": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "ci": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "autod": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "ci": {
+      "version": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "repository": {
+      "type": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "url": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "author": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "license": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "baseDir": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "HOME": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "rundir": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "notFound": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "sitefile": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "middlewares": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "httpClient": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "encoding": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "formLimit": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "jsonLimit": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "strict": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "depth": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "parameterLimit": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "encoding": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "env": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "level": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "consoleLevel": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "outputJSON": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "buffer": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "appLogName": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "coreLogName": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "agentLogName": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "errorLogName": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.local.js"
+    },
+    "allowDebugAtProd": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "request": {
+      "timeout": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "freeSocketTimeout": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "maxSockets": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "maxFreeSockets": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "freeSocketTimeout": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "maxSockets": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "maxFreeSockets": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "logging": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "coreMiddleware": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "workerStartTimeout": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "serverTimeout": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "port": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+      "hostname": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js",
+    "responseTimeout": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+  },
+  "onClientError": "f:\\amisu\\EggJs\\node_modules\\_egg@2.22.2@egg\\config\\config.default.js"
+}
